@@ -115,7 +115,7 @@ nav a:hover::after { width: 100%; }
   text-transform: uppercase; margin-bottom: 48px;
 }
 .hero-badge::before, .hero-badge::after { content: ''; display: block; width: 40px; height: 1px; background: var(--gold); }
-h1.hero-title { font-size: clamp(38px, 6vw, 76px); font-weight: 300; line-height: 1.35; margin-bottom: 32px; }
+h1.hero-title { font-size: clamp(38px, 6vw, 76px); font-weight: 300; line-height: 1.35; margin-bottom: 32px; text-wrap: balance; }
 h1.hero-title .g { color: var(--gold); }
 .hero-en {
   font-family: var(--font-en); font-size: clamp(11px,1.2vw,13px); letter-spacing: 0.3em;
@@ -178,9 +178,24 @@ h1.hero-title .g { color: var(--gold); }
    ============================================ */
 .s-stance { background: var(--black); }
 .s-stance .wrap { padding-top: 160px; padding-bottom: 160px; text-align: center; }
-.stance-text { font-size: clamp(22px,3.5vw,44px); font-weight: 300; line-height: 1.9; margin-bottom: 56px; }
-.del { color: var(--gray); text-decoration: line-through; text-decoration-color: var(--gold); }
-.aff { color: var(--gold); }
+.stance-text { margin-bottom: 56px; }
+.stance-neg {
+  font-size: clamp(14px, 1.6vw, 20px);
+  font-weight: 300;
+  color: var(--gray);
+  letter-spacing: 0.04em;
+  margin-bottom: 28px;
+  font-family: var(--font-serif);
+}
+.stance-pos {
+  font-size: clamp(28px, 4.5vw, 62px);
+  font-weight: 300;
+  color: var(--white);
+  line-height: 1.45;
+  font-family: var(--font-serif);
+  text-wrap: balance;
+}
+.stance-pos span { color: var(--gold); }
 .stance-body { max-width: 660px; margin: 0 auto; font-size: 15px; color: var(--silver); line-height: 2; }
 
 /* ============================================
