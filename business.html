@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Business | Fenrir Innovations Inc.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;700&family=Noto+Sans+JP:wght@300;400;500&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .biz-detail { }
+    .biz-section { padding: 100px 0; border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .biz-section:nth-child(odd) { background: var(--black); }
+    .biz-section:nth-child(even) { background: var(--dark-blue); }
+    .biz-section .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .biz-section:nth-child(even) .wrap { direction: rtl; }
+    .biz-section:nth-child(even) .wrap > * { direction: ltr; }
+    .biz-visual { background: linear-gradient(135deg, rgba(201,162,74,0.08), rgba(111,163,200,0.06)); height: 360px; display: flex; align-items: center; justify-content: center; border: 1px solid rgba(201,162,74,0.12); }
+    .biz-visual-num { font-family: var(--font-en); font-size: 100px; font-weight: 300; color: rgba(201,162,74,0.15); }
+    .biz-detail-text p { font-size: 15px; color: var(--silver); line-height: 2.1; margin-bottom: 18px; }
+    .biz-feature-list { margin-top: 28px; display: flex; flex-direction: column; gap: 12px; }
+    .biz-feature { display: flex; align-items: flex-start; gap: 14px; font-size: 14px; color: var(--silver); }
+    .biz-feature::before { content: '—'; color: var(--gold); flex-shrink: 0; margin-top: 2px; }
+    @media(max-width:1024px){ .biz-section .wrap{grid-template-columns:1fr;} .biz-section:nth-child(even) .wrap{direction:ltr;} }
+  </style>
+</head>
+<body>
+
+<header id="header">
+  <a href="index.html" class="logo">FENRIR <span>INNOVATIONS</span></a>
+  <nav>
+    <a href="index.html">Home</a><a href="about.html">About</a><a href="system-design.html">System Design</a>
+    <a href="business.html" style="color:var(--gold);">Business</a>
+    <a href="insight.html">Insight</a><a href="case.html">Case</a><a href="recruit.html">Recruit</a>
+    <a href="contact.html" class="nav-cta">Contact</a>
+  </nav>
+  <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+</header>
+<div class="mobile-nav" id="mobileNav">
+  <a href="index.html">Home</a><a href="about.html">About</a><a href="system-design.html">System Design</a>
+  <a href="business.html">Business</a><a href="insight.html">Insight</a><a href="case.html">Case</a>
+  <a href="recruit.html">Recruit</a><a href="contact.html">Contact</a>
+</div>
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="page-hero-lbl">Business</div>
+    <h1 class="page-hero-title">4つの<br>事業軸。</h1>
+    <div class="page-hero-en">Our Four Business Pillars</div>
+  </div>
+</div>
+
+<div class="biz-detail">
+  <!-- BIZ 01 -->
+  <div class="biz-section">
+    <div class="wrap">
+      <div class="fu">
+        <div class="s-label">01 — Network Integration</div>
+        <h2 class="s-title">福祉法人<br>ネットワーク統合</h2>
+        <div class="s-divider"></div>
+        <div class="biz-detail-text">
+          <p>孤立した社会福祉法人を「プラットフォーム」へと接続し、経営資源・人材・ノウハウを共有する仕組みを構築します。これは単なる業務連携ではありません。法人同士が互いの強みを補完し合い、地域全体として機能するネットワーク設計です。</p>
+          <p>規模の論理を持てない小規模法人でも、ネットワークの一員として機能することで、大規模法人と同等以上の競争力と継続性を手に入れることができます。</p>
+        </div>
+        <div class="biz-feature-list">
+          <div class="biz-feature">法人間の機能・役割の最適配分設計</div>
+          <div class="biz-feature">共有バックオフィス機能（人事・経理・IT）の構築</div>
+          <div class="biz-feature">人材プールの形成と法人間での柔軟な配置</div>
+          <div class="biz-feature">ネットワーク全体のガバナンス設計</div>
+        </div>
+      </div>
+      <div class="biz-visual fi"><div class="biz-visual-num">01</div></div>
+    </div>
+  </div>
+
+  <!-- BIZ 02 -->
+  <div class="biz-section">
+    <div class="wrap">
+      <div class="fu">
+        <div class="s-label">02 — Management Reform</div>
+        <h2 class="s-title">経営改革<br>コンサルティング</h2>
+        <div class="s-divider"></div>
+        <div class="biz-detail-text">
+          <p>財務・労務・IT・組織設計のすべてを統合的に再設計します。個別の問題を個別に解くのではなく、法人経営の「構造」を根本から変革することで、持続可能な経営基盤を構築します。</p>
+          <p>属人化した意思決定から、透明で再現可能なシステムへの移行。理念と経営数値が連動した組織への変革を実現します。</p>
+        </div>
+        <div class="biz-feature-list">
+          <div class="biz-feature">財務構造の可視化と収益改善設計</div>
+          <div class="biz-feature">組織設計と意思決定プロセスの再構築</div>
+          <div class="biz-feature">人事制度・評価制度の再設計</div>
+          <div class="biz-feature">理念浸透プログラムの策定と実施</div>
+        </div>
+      </div>
+      <div class="biz-visual fi"><div class="biz-visual-num">02</div></div>
+    </div>
+  </div>
+
+  <!-- BIZ 03 -->
+  <div class="biz-section">
+    <div class="wrap">
+      <div class="fu">
+        <div class="s-label">03 — Digital Transformation</div>
+        <h2 class="s-title">福祉DX<br>プラットフォーム</h2>
+        <div class="s-divider"></div>
+        <div class="biz-detail-text">
+          <p>現場の負荷を削減するデジタル基盤を設計・導入します。単なるシステム導入ではなく、現場の実態に合わせた設計と運用定着を重視します。</p>
+          <p>介護記録・シフト管理・法人間連携・経営ダッシュボードをワンプラットフォームで実現。データ活用によって、経営の意思決定をより迅速・正確にします。</p>
+        </div>
+        <div class="biz-feature-list">
+          <div class="biz-feature">介護記録・申し送りのデジタル化</div>
+          <div class="biz-feature">シフト最適化・人材配置支援</div>
+          <div class="biz-feature">法人間データ共有基盤の設計</div>
+          <div class="biz-feature">経営ダッシュボード・KPI可視化</div>
+        </div>
+      </div>
+      <div class="biz-visual fi"><div class="biz-visual-num">03</div></div>
+    </div>
+  </div>
+
+  <!-- BIZ 04 -->
+  <div class="biz-section">
+    <div class="wrap">
+      <div class="fu">
+        <div class="s-label">04 — Policy Advocacy</div>
+        <h2 class="s-title">政策提言・<br>社会インフラ設計</h2>
+        <div class="s-divider"></div>
+        <div class="biz-detail-text">
+          <p>現場知見に基づいた政策提言を通じて、社会福祉制度そのものの設計に参与します。これは私たちが目指す「社会システム設計」の最上位に位置する活動です。</p>
+          <p>個別法人の改革を積み重ねながら得られた知見を、制度設計へとフィードバック。現場から政策を変える循環を作り出します。</p>
+        </div>
+        <div class="biz-feature-list">
+          <div class="biz-feature">行政・自治体との協働プロジェクト</div>
+          <div class="biz-feature">社会福祉制度に関するリサーチ・提言</div>
+          <div class="biz-feature">学術機関との共同研究</div>
+          <div class="biz-feature">地域福祉エコシステムのモデル化・横展開</div>
+        </div>
+      </div>
+      <div class="biz-visual fi"><div class="biz-visual-num">04</div></div>
+    </div>
+  </div>
+</div>
+
+<section class="s-cta">
+  <div class="wrap">
+    <div class="cta-en fu">Get Started</div>
+    <h2 class="cta-title fu">まずは、課題を<br>お聞かせください。</h2>
+    <div class="hero-btns fu">
+      <a href="contact.html" class="btn btn-gold">お問い合わせ</a>
+      <a href="case.html" class="btn btn-line">導入事例を見る</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-inner">
+    <div class="foot-brand"><a href="index.html" class="logo">FENRIR <span>INNOVATIONS</span></a><p>フェンリルイノベーションズ株式会社<br>社会福祉インフラを再定義する「社会システム設計会社」</p></div>
+    <div><div class="foot-ttl">Company</div><ul class="foot-list"><li><a href="about.html">About</a></li><li><a href="system-design.html">System Design</a></li><li><a href="business.html">Business</a></li></ul></div>
+    <div><div class="foot-ttl">Content</div><ul class="foot-list"><li><a href="insight.html">Insight</a></li><li><a href="case.html">Case</a></li><li><a href="recruit.html">Recruit</a></li></ul></div>
+    <div><div class="foot-ttl">Contact</div><ul class="foot-list"><li><a href="contact.html">お問い合わせ</a></li><li><a href="#">プライバシーポリシー</a></li></ul></div>
+  </div>
+  <div class="foot-bottom">
+    <span class="foot-copy">© 2025 Fenrir Innovations Inc. All rights reserved.</span>
+    <span class="foot-copy" style="color:var(--gold);">Redefining Social Welfare Infrastructure</span>
+  </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

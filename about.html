@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | Fenrir Innovations Inc.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;700&family=Noto+Sans+JP:wght@300;400;500&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .about-philosophy { background: var(--dark-blue); }
+    .about-philosophy .wrap { padding-top: 120px; padding-bottom: 120px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+    .phil-body p { font-size: 15px; color: var(--silver); line-height: 2.1; margin-bottom: 20px; }
+    .mvv { background: var(--black); }
+    .mvv .wrap { padding-top: 120px; padding-bottom: 120px; }
+    .mvv-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; margin-top: 52px; }
+    .mvv-card { padding: 48px 36px; border-top: 2px solid var(--gold); background: rgba(15,42,68,0.15); }
+    .mvv-en { font-family: var(--font-en); font-size: 11px; letter-spacing: 0.4em; color: var(--gold); text-transform: uppercase; margin-bottom: 20px; }
+    .mvv-title { font-size: 22px; margin-bottom: 20px; }
+    .mvv-body { font-size: 14px; color: var(--silver); line-height: 2; }
+    .founder { background: var(--dark-blue); }
+    .founder .wrap { padding-top: 120px; padding-bottom: 120px; display: grid; grid-template-columns: 1fr 2fr; gap: 80px; align-items: start; }
+    .founder-avatar { width: 100%; aspect-ratio: 3/4; background: linear-gradient(160deg, rgba(201,162,74,0.1), rgba(111,163,200,0.08)); display: flex; align-items: center; justify-content: center; font-family: var(--font-en); font-size: 48px; color: rgba(201,162,74,0.2); border: 1px solid rgba(201,162,74,0.15); }
+    .founder-name { font-size: 28px; margin-bottom: 8px; }
+    .founder-role { font-family: var(--font-en); font-size: 10px; letter-spacing: 0.35em; color: var(--gold); text-transform: uppercase; margin-bottom: 32px; }
+    .founder-msg p { font-size: 15px; color: var(--silver); line-height: 2.2; margin-bottom: 20px; }
+    .company-info { background: var(--black); }
+    .company-info .wrap { padding-top: 120px; padding-bottom: 120px; }
+    .info-table { margin-top: 52px; border-top: 1px solid rgba(255,255,255,0.07); }
+    .info-row { display: grid; grid-template-columns: 200px 1fr; border-bottom: 1px solid rgba(255,255,255,0.07); padding: 24px 0; }
+    .info-key { font-family: var(--font-en); font-size: 10px; letter-spacing: 0.3em; color: var(--gold); text-transform: uppercase; padding-right: 32px; align-self: start; margin-top: 2px; }
+    .info-val { font-size: 15px; color: var(--silver); line-height: 1.8; }
+    @media(max-width:1024px){ .about-philosophy .wrap,.founder .wrap{grid-template-columns:1fr;gap:40px;} .mvv-grid{grid-template-columns:1fr;} }
+    @media(max-width:768px){ .info-row{grid-template-columns:1fr;gap:8px;} }
+  </style>
+</head>
+<body>
+
+<header id="header">
+  <a href="index.html" class="logo">FENRIR <span>INNOVATIONS</span></a>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html" style="color:var(--gold);">About</a>
+    <a href="system-design.html">System Design</a>
+    <a href="business.html">Business</a>
+    <a href="insight.html">Insight</a>
+    <a href="case.html">Case</a>
+    <a href="recruit.html">Recruit</a>
+    <a href="contact.html" class="nav-cta">Contact</a>
+  </nav>
+  <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+</header>
+<div class="mobile-nav" id="mobileNav">
+  <a href="index.html">Home</a><a href="about.html">About</a><a href="system-design.html">System Design</a>
+  <a href="business.html">Business</a><a href="insight.html">Insight</a><a href="case.html">Case</a>
+  <a href="recruit.html">Recruit</a><a href="contact.html">Contact</a>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="page-hero-lbl">About</div>
+    <h1 class="page-hero-title">私たちとは、<br>何者か。</h1>
+    <div class="page-hero-en">Who We Are</div>
+  </div>
+</div>
+
+<!-- PHILOSOPHY -->
+<section class="about-philosophy">
+  <div class="wrap">
+    <div>
+      <div class="s-label fu">Philosophy</div>
+      <h2 class="s-title fu">社会システムの<br>設計者として。</h2>
+      <div class="s-divider fu"></div>
+    </div>
+    <div class="phil-body fu">
+      <p>
+        フェンリルイノベーションズ株式会社は、単なる福祉施設の運営会社ではありません。
+        私たちは、社会福祉という「インフラ」を再設計することを使命とする、
+        社会システム設計会社です。
+      </p>
+      <p>
+        日本の社会福祉は今、深刻な構造的危機に直面しています。
+        少子高齢化の加速、介護人材の慢性的不足、法人経営の疲弊——
+        これらは個別の問題ではなく、制度・組織・文化が複雑に絡み合った「構造問題」です。
+      </p>
+      <p>
+        この問題に対して、私たちは「対症療法」ではなく「構造介入」で応えます。
+        社会福祉法人同士をネットワーク化し、経営統合によって規模を持ち、
+        テクノロジーと制度設計の力で地域福祉のエコシステムを根本から再構築する。
+        それが、フェンリルイノベーションズの存在理由です。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- MISSION / VISION / VALUES -->
+<section class="mvv">
+  <div class="wrap">
+    <div class="s-label fu">Mission / Vision / Values</div>
+    <h2 class="s-title fu">理念体系</h2>
+    <div class="mvv-grid stg">
+      <div class="mvv-card">
+        <div class="mvv-en">Mission</div>
+        <div class="mvv-title">使命</div>
+        <div class="mvv-body">社会福祉法人のネットワーク化と経営統合を通じて、持続可能な地域福祉エコシステムを構築する。</div>
+      </div>
+      <div class="mvv-card">
+        <div class="mvv-en">Vision</div>
+        <div class="mvv-title">ビジョン</div>
+        <div class="mvv-body">すべての地域に、誰もが安心して老いられる社会インフラが存在する世界を実現する。</div>
+      </div>
+      <div class="mvv-card">
+        <div class="mvv-en">Values</div>
+        <div class="mvv-title">価値観</div>
+        <div class="mvv-body">思想なき行動は浪費。行動なき思想は空論。私たちは、思想と実装を一体として追求します。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOUNDER MESSAGE -->
+<section class="founder">
+  <div class="wrap">
+    <div class="fu">
+      <div class="founder-avatar">F</div>
+    </div>
+    <div class="fu">
+      <div class="s-label">Founder's Message</div>
+      <div class="founder-name">代表取締役　山田 誠一</div>
+      <div class="founder-role">CEO / Founder</div>
+      <div class="founder-msg">
+        <p>
+          私がこの会社を設立しようと決意したのは、一つの問いからでした。
+          「なぜ、善意で運営されている福祉施設が次々と経営難に陥るのか」。
+        </p>
+        <p>
+          答えは明快でした。問題は人でも志でもなく、「構造」にある。
+          個別施設がいかに頑張っても、孤立した状態では規模の論理に勝てません。
+          人材も、資金も、ノウハウも、分散したままでは消耗するだけです。
+        </p>
+        <p>
+          だからこそ、私たちは「統合」という思想を選びました。
+          競争ではなく連携。個別最適ではなく全体設計。
+          フェンリルイノベーションズは、そのための会社です。
+          共に設計しましょう。社会福祉の、新しいインフラを。
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPANY INFO -->
+<section class="company-info">
+  <div class="wrap">
+    <div class="s-label fu">Company Info</div>
+    <h2 class="s-title fu">会社概要</h2>
+    <div class="info-table fu">
+      <div class="info-row">
+        <div class="info-key">Company</div>
+        <div class="info-val">フェンリルイノベーションズ株式会社<br><span style="font-family:var(--font-en);font-size:13px;color:var(--gray);">Fenrir Innovations Inc.</span></div>
+      </div>
+      <div class="info-row">
+        <div class="info-key">Founded</div>
+        <div class="info-val">2025年（設立準備中）</div>
+      </div>
+      <div class="info-row">
+        <div class="info-key">Business</div>
+        <div class="info-val">社会福祉法人ネットワーク統合支援 / 経営改革コンサルティング / 福祉DXプラットフォーム / 政策提言・社会インフラ設計</div>
+      </div>
+      <div class="info-row">
+        <div class="info-key">Concept</div>
+        <div class="info-val">社会システム設計会社</div>
+      </div>
+      <div class="info-row">
+        <div class="info-key">Location</div>
+        <div class="info-val">東京都（登記完了後に公開）</div>
+      </div>
+      <div class="info-row">
+        <div class="info-key">Contact</div>
+        <div class="info-val"><a href="contact.html" style="color:var(--gold);">お問い合わせフォームへ →</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="s-cta">
+  <div class="wrap">
+    <div class="cta-en fu">Let's Design Together</div>
+    <h2 class="cta-title fu">社会福祉の未来を、<br>一緒に設計しませんか。</h2>
+    <div class="hero-btns fu">
+      <a href="contact.html" class="btn btn-gold">お問い合わせ</a>
+      <a href="system-design.html" class="btn btn-line">System Designを見る</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-inner">
+    <div class="foot-brand">
+      <a href="index.html" class="logo">FENRIR <span>INNOVATIONS</span></a>
+      <p>フェンリルイノベーションズ株式会社<br>社会福祉インフラを再定義する<br>「社会システム設計会社」</p>
+    </div>
+    <div><div class="foot-ttl">Company</div><ul class="foot-list"><li><a href="about.html">About</a></li><li><a href="system-design.html">System Design</a></li><li><a href="business.html">Business</a></li></ul></div>
+    <div><div class="foot-ttl">Content</div><ul class="foot-list"><li><a href="insight.html">Insight</a></li><li><a href="case.html">Case</a></li><li><a href="recruit.html">Recruit</a></li></ul></div>
+    <div><div class="foot-ttl">Contact</div><ul class="foot-list"><li><a href="contact.html">お問い合わせ</a></li><li><a href="#">プライバシーポリシー</a></li></ul></div>
+  </div>
+  <div class="foot-bottom">
+    <span class="foot-copy">© 2025 Fenrir Innovations Inc. All rights reserved.</span>
+    <span class="foot-copy" style="color:var(--gold);">Redefining Social Welfare Infrastructure</span>
+  </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

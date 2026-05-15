@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>System Design | Fenrir Innovations Inc.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;700&family=Noto+Sans+JP:wght@300;400;500&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .sd-concept { background: var(--dark-blue); }
+    .sd-concept .wrap { padding-top: 120px; padding-bottom: 120px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .sd-concept p { font-size: 15px; color: var(--silver); line-height: 2.1; margin-bottom: 18px; }
+    .sd-method { background: var(--black); }
+    .sd-method .wrap { padding-top: 120px; padding-bottom: 120px; }
+    .method-steps { display: flex; flex-direction: column; gap: 2px; margin-top: 60px; }
+    .method-step { display: grid; grid-template-columns: 100px 1fr; gap: 48px; align-items: start; padding: 48px 48px; background: rgba(15,42,68,0.18); border-left: 2px solid transparent; transition: 0.3s; }
+    .method-step:hover { border-left-color: var(--gold); background: rgba(15,42,68,0.35); }
+    .step-num { font-family: var(--font-en); font-size: 48px; font-weight: 300; color: rgba(201,162,74,0.25); line-height: 1; }
+    .step-label { font-family: var(--font-en); font-size: 9px; letter-spacing: 0.35em; color: var(--gold); text-transform: uppercase; margin-bottom: 12px; }
+    .step-title { font-size: 22px; margin-bottom: 14px; }
+    .step-body { font-size: 14px; color: var(--silver); line-height: 2; }
+    .sd-model { background: var(--dark-blue); }
+    .sd-model .wrap { padding-top: 120px; padding-bottom: 120px; }
+    .model-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; margin-top: 60px; }
+    .model-card { padding: 48px 32px; background: rgba(11,11,13,0.45); border-top: 1px solid rgba(201,162,74,0.2); }
+    .model-icon { font-family: var(--font-en); font-size: 28px; color: rgba(201,162,74,0.2); margin-bottom: 20px; letter-spacing: 0.1em; }
+    .model-title { font-size: 19px; margin-bottom: 14px; }
+    .model-body { font-size: 13px; color: var(--silver); line-height: 1.9; }
+    @media(max-width:1024px){ .sd-concept .wrap{grid-template-columns:1fr;} .model-grid{grid-template-columns:1fr;} }
+    @media(max-width:768px){ .method-step{grid-template-columns:1fr;gap:20px;padding:32px 24px;} }
+  </style>
+</head>
+<body>
+
+<header id="header">
+  <a href="index.html" class="logo">FENRIR <span>INNOVATIONS</span></a>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="system-design.html" style="color:var(--gold);">System Design</a>
+    <a href="business.html">Business</a>
+    <a href="insight.html">Insight</a>
+    <a href="case.html">Case</a>
+    <a href="recruit.html">Recruit</a>
+    <a href="contact.html" class="nav-cta">Contact</a>
+  </nav>
+  <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+</header>
+<div class="mobile-nav" id="mobileNav">
+  <a href="index.html">Home</a><a href="about.html">About</a><a href="system-design.html">System Design</a>
+  <a href="business.html">Business</a><a href="insight.html">Insight</a><a href="case.html">Case</a>
+  <a href="recruit.html">Recruit</a><a href="contact.html">Contact</a>
+</div>
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="page-hero-lbl">System Design</div>
+    <h1 class="page-hero-title">思想が、<br>構造を生む。</h1>
+    <div class="page-hero-en">Our Design Philosophy & Methodology</div>
+  </div>
+</div>
+
+<!-- CONCEPT -->
+<section class="sd-concept">
+  <div class="wrap">
+    <div>
+      <div class="s-label fu">Design Philosophy</div>
+      <h2 class="s-title fu">課題を解くのではなく、<br>課題が生まれる<br>構造に介入する。</h2>
+      <div class="s-divider fu"></div>
+    </div>
+    <div class="fu">
+      <p>
+        多くの経営改革は、現象への対処に留まります。
+        離職率が高ければ採用を強化し、赤字なら経費を削減する。
+        しかしそれは、根本的な解決にはなりません。
+      </p>
+      <p>
+        フェンリルイノベーションズは、問題の「上流」に立ちます。
+        なぜその問題が生まれるのか。どのような制度・組織・文化の連鎖が、
+        その現象を生み出しているのか。
+        私たちはその構造を解析し、根本から設計し直します。
+      </p>
+      <p>
+        「システム設計」とは、問題の解決策ではありません。
+        問題が生まれない構造の創造——それが私たちのアプローチです。
+      </p>
+      <div class="diagram-wrap fi" style="height:280px;margin-top:48px;">
+        <div class="diagram">
+          <div class="ring"></div><div class="ring"></div><div class="ring"></div><div class="ring"></div><div class="ring"></div>
+          <div class="ring-text">SYSTEM<br>DESIGN</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- METHODOLOGY -->
+<section class="sd-method">
+  <div class="wrap">
+    <div class="s-label fu">Methodology</div>
+    <h2 class="s-title fu">設計プロセス</h2>
+    <div class="method-steps fu">
+      <div class="method-step">
+        <div class="step-num">01</div>
+        <div>
+          <div class="step-label">Diagnosis</div>
+          <div class="step-title">構造診断</div>
+          <div class="step-body">法人・地域・制度の3層にわたる構造を可視化します。財務・労務・組織・IT・地域関係など多角的な分析を通じて、問題の「根」がどこにあるかを特定します。この段階で「何を変えるか」ではなく「なぜそうなっているか」を徹底的に問います。</div>
+        </div>
+      </div>
+      <div class="method-step">
+        <div class="step-num">02</div>
+        <div>
+          <div class="step-label">Design</div>
+          <div class="step-title">システム設計</div>
+          <div class="step-body">診断結果をもとに、理念を実装可能な組織・業務・IT設計に落とし込みます。「あるべき姿」を定義し、そこに到達するための移行プランを設計します。重要なのは、設計が現場で機能するよう「運用可能性」を最初から組み込むことです。</div>
+        </div>
+      </div>
+      <div class="method-step">
+        <div class="step-num">03</div>
+        <div>
+          <div class="step-label">Network</div>
+          <div class="step-title">ネットワーク統合</div>
+          <div class="step-body">設計した仕組みを、法人単体にとどめず、地域の法人間ネットワークへと拡張します。共有できる機能・資源・人材を特定し、法人間の連携プロトコルを設計。孤立した法人を、互いに支え合う有機的なネットワークへと接続します。</div>
+        </div>
+      </div>
+      <div class="method-step">
+        <div class="step-num">04</div>
+        <div>
+          <div class="step-label">Ecosystem</div>
+          <div class="step-title">エコシステム運営</div>
+          <div class="step-body">構築したネットワークが、支援なしに自律的に発展していくエコシステムへと成熟させます。各法人が互いを補完し、地域のニーズに応じて柔軟に進化する「生態系」の実現が、私たちが目指す最終形です。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MODEL -->
+<section class="sd-model">
+  <div class="wrap">
+    <div class="s-label fu">Design Model</div>
+    <h2 class="s-title fu">3つの設計軸</h2>
+    <div class="model-grid stg">
+      <div class="model-card">
+        <div class="model-icon">STR</div>
+        <div class="model-title">構造設計<br><span style="font-family:var(--font-en);font-size:11px;color:var(--gray);letter-spacing:0.2em;">Structure</span></div>
+        <div class="model-body">法人・制度・地域の3層を横断する構造分析。問題の「根」を見つけ出し、どこに介入すれば最大の変化が起きるかを特定します。</div>
+      </div>
+      <div class="model-card">
+        <div class="model-icon">SYS</div>
+        <div class="model-title">システム設計<br><span style="font-family:var(--font-en);font-size:11px;color:var(--gray);letter-spacing:0.2em;">System</span></div>
+        <div class="model-body">理念から実装までを一気通貫で設計。組織・業務・IT・人事制度が連動して機能するよう、統合的なシステムを構築します。</div>
+      </div>
+      <div class="model-card">
+        <div class="model-icon">ECO</div>
+        <div class="model-title">エコ設計<br><span style="font-family:var(--font-en);font-size:11px;color:var(--gray);letter-spacing:0.2em;">Ecosystem</span></div>
+        <div class="model-body">単体法人の改革を超え、法人間ネットワークが自律的に発展するエコシステムを設計。地域全体のケアインフラとして機能させます。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="s-cta">
+  <div class="wrap">
+    <div class="cta-en fu">Start Designing</div>
+    <h2 class="cta-title fu">まず、構造を診断しましょう。</h2>
+    <p class="cta-sub fu">システム設計の第一歩は、現状の構造を正確に把握することから始まります。<br>まずはお気軽にご相談ください。</p>
+    <div class="hero-btns fu">
+      <a href="contact.html" class="btn btn-gold">ご相談はこちら</a>
+      <a href="business.html" class="btn btn-line">事業内容を見る</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-inner">
+    <div class="foot-brand"><a href="index.html" class="logo">FENRIR <span>INNOVATIONS</span></a><p>フェンリルイノベーションズ株式会社<br>社会福祉インフラを再定義する<br>「社会システム設計会社」</p></div>
+    <div><div class="foot-ttl">Company</div><ul class="foot-list"><li><a href="about.html">About</a></li><li><a href="system-design.html">System Design</a></li><li><a href="business.html">Business</a></li></ul></div>
+    <div><div class="foot-ttl">Content</div><ul class="foot-list"><li><a href="insight.html">Insight</a></li><li><a href="case.html">Case</a></li><li><a href="recruit.html">Recruit</a></li></ul></div>
+    <div><div class="foot-ttl">Contact</div><ul class="foot-list"><li><a href="contact.html">お問い合わせ</a></li><li><a href="#">プライバシーポリシー</a></li></ul></div>
+  </div>
+  <div class="foot-bottom">
+    <span class="foot-copy">© 2025 Fenrir Innovations Inc. All rights reserved.</span>
+    <span class="foot-copy" style="color:var(--gold);">Redefining Social Welfare Infrastructure</span>
+  </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

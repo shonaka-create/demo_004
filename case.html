@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Case | Fenrir Innovations Inc.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;700&family=Noto+Sans+JP:wght@300;400;500&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .case-page { background: var(--black); }
+    .case-page .wrap { padding-top: 80px; padding-bottom: 120px; }
+    .case-detail { display: flex; flex-direction: column; gap: 80px; }
+    .case-card { display: grid; grid-template-columns: 1fr 1fr; gap: 0; background: rgba(15,42,68,0.15); border-top: 1px solid rgba(201,162,74,0.15); }
+    .case-card-img { background: linear-gradient(135deg, rgba(201,162,74,0.07), rgba(111,163,200,0.05)); min-height: 340px; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 16px; }
+    .case-card-img-num { font-family: var(--font-en); font-size: 80px; font-weight: 300; color: rgba(201,162,74,0.15); }
+    .case-card-img-type { font-family: var(--font-en); font-size: 9px; letter-spacing: 0.35em; color: var(--gold); text-transform: uppercase; }
+    .case-card-body { padding: 60px; }
+    .case-num-tag { font-family: var(--font-en); font-size: 10px; letter-spacing: 0.3em; color: var(--gold); text-transform: uppercase; margin-bottom: 8px; }
+    .case-card-title { font-size: 22px; line-height: 1.55; margin-bottom: 28px; }
+    .case-card-body p { font-size: 14px; color: var(--silver); line-height: 2.1; margin-bottom: 16px; }
+    .case-result { margin-top: 32px; padding: 28px 32px; background: rgba(201,162,74,0.05); border-left: 2px solid var(--gold); }
+    .case-result-label { font-family: var(--font-en); font-size: 9px; letter-spacing: 0.35em; color: var(--gold); text-transform: uppercase; margin-bottom: 12px; }
+    .case-result-text { font-size: 14px; color: var(--silver); line-height: 1.8; }
+    @media(max-width:1024px){ .case-card{grid-template-columns:1fr;} }
+    @media(max-width:768px){ .case-card-body{padding:36px 24px;} }
+  </style>
+</head>
+<body>
+
+<header id="header">
+  <a href="index.html" class="logo">FENRIR <span>INNOVATIONS</span></a>
+  <nav>
+    <a href="index.html">Home</a><a href="about.html">About</a><a href="system-design.html">System Design</a>
+    <a href="business.html">Business</a><a href="insight.html">Insight</a>
+    <a href="case.html" style="color:var(--gold);">Case</a>
+    <a href="recruit.html">Recruit</a>
+    <a href="contact.html" class="nav-cta">Contact</a>
+  </nav>
+  <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+</header>
+<div class="mobile-nav" id="mobileNav">
+  <a href="index.html">Home</a><a href="about.html">About</a><a href="system-design.html">System Design</a>
+  <a href="business.html">Business</a><a href="insight.html">Insight</a><a href="case.html">Case</a>
+  <a href="recruit.html">Recruit</a><a href="contact.html">Contact</a>
+</div>
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="page-hero-lbl">Case</div>
+    <h1 class="page-hero-title">導入事例</h1>
+    <div class="page-hero-en">Case Studies</div>
+  </div>
+</div>
+
+<section class="case-page">
+  <div class="wrap">
+    <div class="case-detail">
+
+      <div class="case-card fu">
+        <div class="case-card-img">
+          <div class="case-card-img-num">01</div>
+          <div class="case-card-img-type">Network Integration</div>
+        </div>
+        <div class="case-card-body">
+          <div class="case-num-tag">Case 01 — Network Integration</div>
+          <div class="case-card-title">東北エリア・社会福祉法人4法人のネットワーク統合と経営標準化プロジェクト</div>
+          <p>高齢化が急速に進む東北エリアで、それぞれ単独で経営する4つの社会福祉法人が、人材不足と財務悪化の二重苦に直面。各法人の強みと弱みを分析し、機能分担と共有バックオフィスの設計を行いました。</p>
+          <p>共通の人材プールを形成し、繁忙期・閑散期での柔軟な人員配置を実現。法人ごとに抱えていた経理・労務業務を統合することで、管理コストを大幅に削減しました。</p>
+          <div class="case-result">
+            <div class="case-result-label">Result</div>
+            <div class="case-result-text">管理コスト 32%削減 / 職員定着率 18%向上 / 4法人合計で黒字転換を実現</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="case-card fu">
+        <div class="case-card-img">
+          <div class="case-card-img-num">02</div>
+          <div class="case-card-img-type">DX Implementation</div>
+        </div>
+        <div class="case-card-body">
+          <div class="case-num-tag">Case 02 — DX Implementation</div>
+          <div class="case-card-title">特別養護老人ホーム向け介護記録DXシステムの設計・導入支援</div>
+          <p>紙ベースの介護記録と手書きの申し送りノートが常態化していた特別養護老人ホームにおいて、現場スタッフの実態調査から始まる段階的なDX推進を実施しました。</p>
+          <p>現場の抵抗感を最小化するため、システム設計・研修・定着支援を一体的に提供。導入6ヶ月後の使用率90%超を達成し、夜勤時の記録負担を大幅に軽減しました。</p>
+          <div class="case-result">
+            <div class="case-result-label">Result</div>
+            <div class="case-result-text">記録業務時間 45%削減 / 申し送りミス 80%減 / 職員満足度スコア 26pt向上</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="case-card fu">
+        <div class="case-card-img">
+          <div class="case-card-img-num">03</div>
+          <div class="case-card-img-type">Management Reform</div>
+        </div>
+        <div class="case-card-body">
+          <div class="case-num-tag">Case 03 — Management Reform</div>
+          <div class="case-card-title">慢性的赤字法人の経営構造改革——3年間で黒字転換を実現した組織再設計</div>
+          <p>5年連続赤字で理事会が経営危機を認識していた社会福祉法人において、財務・組織・サービス設計の3面からの構造改革を実施。問題の根本が「理事長の属人的経営」にあることを特定し、意思決定システムの再設計から着手しました。</p>
+          <p>組織図の刷新、人事評価制度の導入、財務ダッシュボードの整備を段階的に実施。3年目には黒字転換を達成し、法人の継続性を確保しました。</p>
+          <div class="case-result">
+            <div class="case-result-label">Result</div>
+            <div class="case-result-text">3年間で黒字転換 / 職員離職率 42%→18%に改善 / 新規事業開始による収益多角化を実現</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="s-cta">
+  <div class="wrap">
+    <div class="cta-en fu">Your Case</div>
+    <h2 class="cta-title fu">あなたの法人の<br>課題をお聞かせください。</h2>
+    <div class="hero-btns fu">
+      <a href="contact.html" class="btn btn-gold">無料相談を申し込む</a>
+      <a href="business.html" class="btn btn-line">事業内容を見る</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-inner">
+    <div class="foot-brand"><a href="index.html" class="logo">FENRIR <span>INNOVATIONS</span></a><p>フェンリルイノベーションズ株式会社<br>社会福祉インフラを再定義する「社会システム設計会社」</p></div>
+    <div><div class="foot-ttl">Company</div><ul class="foot-list"><li><a href="about.html">About</a></li><li><a href="system-design.html">System Design</a></li><li><a href="business.html">Business</a></li></ul></div>
+    <div><div class="foot-ttl">Content</div><ul class="foot-list"><li><a href="insight.html">Insight</a></li><li><a href="case.html">Case</a></li><li><a href="recruit.html">Recruit</a></li></ul></div>
+    <div><div class="foot-ttl">Contact</div><ul class="foot-list"><li><a href="contact.html">お問い合わせ</a></li><li><a href="#">プライバシーポリシー</a></li></ul></div>
+  </div>
+  <div class="foot-bottom">
+    <span class="foot-copy">© 2025 Fenrir Innovations Inc. All rights reserved.</span>
+    <span class="foot-copy" style="color:var(--gold);">Redefining Social Welfare Infrastructure</span>
+  </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
