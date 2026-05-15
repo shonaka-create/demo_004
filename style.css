@@ -124,7 +124,8 @@ nav a:hover::after { width: 100%; }
   text-transform: uppercase; margin-bottom: 48px;
 }
 .hero-badge::before, .hero-badge::after { content: ''; display: block; width: 40px; height: 1px; background: var(--gold); }
-h1.hero-title { font-size: clamp(38px, 6vw, 76px); font-weight: 300; line-height: 1.35; margin-bottom: 32px; text-wrap: balance; }
+h1.hero-title { font-size: clamp(38px, 6vw, 76px); font-weight: 300; line-height: 1.35; margin-bottom: 32px; }
+.nobr { white-space: nowrap; }
 h1.hero-title .g { color: var(--gold); }
 .hero-en {
   font-family: var(--font-en); font-size: clamp(11px,1.2vw,13px); letter-spacing: 0.3em;
@@ -201,9 +202,8 @@ h1.hero-title .g { color: var(--gold); }
   font-size: clamp(28px, 4.5vw, 62px);
   font-weight: 300;
   color: var(--white);
-  line-height: 1.45;
+  line-height: 1.55;
   font-family: var(--font-serif);
-  text-wrap: balance;
 }
 .stance-pos span { color: var(--gold); }
 .stance-body { max-width: 660px; margin: 0 auto; font-size: 15px; color: var(--silver); line-height: 2; }
