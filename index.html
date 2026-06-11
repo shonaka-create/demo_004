@@ -15,10 +15,9 @@
 <header id="header">
   <a href="index.html" class="logo">FENRIR <span>INNOVATIONS</span></a>
   <nav>
-    <a href="index.html" class="active">Home</a>
     <a href="about.html">About</a>
-    <a href="system-design.html">System Design</a>
     <a href="business.html">Business</a>
+    <a href="system-design.html">System Design</a>
     <a href="insight.html">Insight</a>
     <a href="case.html">Case</a>
     <a href="recruit.html">Recruit</a>
@@ -40,14 +39,13 @@
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-video" style="opacity:1;background:linear-gradient(160deg,#0A1628 0%,#07090C 100%);"></div>
+  <canvas id="heroCanvas" class="hero-canvas"></canvas>
   <div class="hero-overlay"></div>
-  <div class="hero-grid"></div>
-  <div class="hero-content">
+  <div class="hero-content hero-content--left">
     <div class="hero-eyebrow fu">Social System Design Company</div>
-    <h1 class="hero-main fu">社会は設計できる。</h1>
+    <h1 class="hero-main fu">社会は<br>設計できる。</h1>
     <p class="hero-sub fu">社会福祉法人ネットワークを基盤に、社会インフラを構築する。<br>Fenrir Innovations は社会システム設計企業である。</p>
-    <p class="hero-tagline fu">Break the System. Design the Next.</p>
+    <p class="hero-tagline fu">Pursuit of a Society Without Inequality</p>
     <div class="hero-cta fu">
       <a href="system-design.html" class="btn-primary">System Design</a>
       <a href="contact.html" class="btn-ghost">Contact Us</a>
@@ -60,284 +58,272 @@
 </section>
 
 <!-- SOCIAL ISSUES -->
-<section class="s-issues">
+<section class="s-issues s-light">
   <div class="container">
-    <div class="sec-label fu">Social Issues</div>
-    <h2 class="sec-heading fu">福祉は今、構造的な<br>限界を迎えている。</h2>
-    <div class="stat-row stg">
-      <div class="stat-card">
-        <div class="stat-num">70<span class="stat-sfx">%</span></div>
-        <div class="stat-desc">の法人が深刻な<br>人材不足に直面している</div>
+    <div class="issues-layout">
+      <div class="issues-left">
+        <div class="sec-label sec-label--dark fu">Social Issues</div>
+        <h2 class="sec-heading sec-heading--dark fu">福祉は今、構造的な限界を<br>越えている。</h2>
+        <p class="sec-body sec-body--dark fu">
+          少子高齢化の加速、慢性的な人手不足、後継者問題——日本の社会福祉は今、個別の対処では乗り越えられない構造的な危機に直面しています。必要なのは、制度の小手先の修正ではなく、社会システムそのものの再設計です。
+        </p>
+        <div class="stat-row stg">
+          <div class="stat-card">
+            <div class="stat-num">70<span class="stat-sfx">%</span></div>
+            <div class="stat-desc">の法人が深刻な<br>人材不足に直面している</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">40<span class="stat-sfx">%</span></div>
+            <div class="stat-desc">の事業者で<br>後継者が不在の状態</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">60<span class="stat-sfx">%</span></div>
+            <div class="stat-desc">の法人が早急な<br>経営改善を必要とする</div>
+          </div>
+        </div>
       </div>
-      <div class="stat-card">
-        <div class="stat-num">40<span class="stat-sfx">%</span></div>
-        <div class="stat-desc">の事業者で<br>後継者が不在の状態</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-num">60<span class="stat-sfx">%</span></div>
-        <div class="stat-desc">の法人が早急な<br>経営改善を必要とする</div>
+      <div class="issues-visual fi">
+        <div class="issues-geo">
+          <div class="geo-inner">
+            <div class="geo-ring geo-ring--1"></div>
+            <div class="geo-ring geo-ring--2"></div>
+            <div class="geo-ring geo-ring--3"></div>
+            <div class="geo-dot geo-dot--1"></div>
+            <div class="geo-dot geo-dot--2"></div>
+            <div class="geo-dot geo-dot--3"></div>
+            <div class="geo-dot geo-dot--4"></div>
+            <div class="geo-dot geo-dot--5"></div>
+            <div class="geo-dot geo-dot--6"></div>
+          </div>
+        </div>
       </div>
     </div>
-    <p class="sec-body fu" style="max-width:760px;margin-top:16px;">
-      少子高齢化の加速、慢性的な人手不足、後継者問題——日本の社会福祉は今、
-      個別の対処では乗り越えられない構造的な危機に直面しています。
-      必要なのは、制度の小手先の修正ではなく、社会システムそのものの再設計です。
-    </p>
   </div>
 </section>
 
 <!-- PHILOSOPHY -->
 <section class="s-philosophy">
   <div class="container">
-    <div class="sec-label fu">Philosophy</div>
-    <div class="phi-block fu">
-      <p class="phi-neg">人を変えるのではない。</p>
-      <p class="phi-pos"><span>仕組みを変える。</span></p>
+    <div class="phi-layout">
+      <div class="phi-visual">
+        <canvas id="phiCanvas"></canvas>
+      </div>
+      <div class="phi-text">
+        <div class="sec-label fu">Core Message</div>
+        <h2 class="phi-heading fu">人を変えるのではない、<br><span>仕組みを変える。</span></h2>
+        <p class="phi-body fu">
+          フェンリルイノベーションズが目指すのは、個人の努力や善意に依存した福祉の限界を超えること。生まれた場所や環境に関わらず、誰もが等しくケアを受けられる社会のために、制度を・組織を・インフラを——社会の仕組みそのものを根本から設計し直します。
+        </p>
+        <a href="system-design.html" class="phi-link fu">選択肢のない社会へ</a>
+      </div>
     </div>
-    <div class="phi-sub fu">選択格差のない社会へ</div>
-    <p class="phi-body fu">
-      フェンリルイノベーションズが目指すのは、個人の努力や善意に依存した福祉の限界を超えること。<br>
-      生まれた場所や環境に関わらず、誰もが等しくケアを受けられる社会のために、<br>
-      制度を・組織を・インフラを——社会の仕組みそのものを根本から設計し直します。
-    </p>
   </div>
 </section>
 
 <!-- SYSTEM DESIGN -->
-<section class="s-system">
+<section class="s-system s-light">
   <div class="container">
-    <div class="sys-layout">
-      <div class="sys-left">
-        <div class="sec-label fu">System Design</div>
-        <h2 class="sec-heading fu">構造への<br>アプローチ</h2>
-        <div class="sec-divider fu"></div>
-        <p class="sec-body fu">
-          フェンリルイノベーションズのシステム設計は、表面的な課題への対処ではなく、
-          問題を生み出す「構造」そのものへの介入です。制度・組織・インフラの三層を
-          同時に再設計することで、持続可能な変革を実現します。
-        </p>
-        <a href="system-design.html" class="link-more fu">System Design を詳しく見る</a>
+    <div class="sec-label sec-label--dark fu">System Design</div>
+    <h2 class="sec-heading sec-heading--dark fu">社会システム設計という<br>新しいアプローチ</h2>
+    <div class="sys-cols stg">
+      <div class="sys-col">
+        <div class="sys-col-num">01</div>
+        <div class="sys-col-en">Policy Redesign</div>
+        <div class="sys-col-title">制度の再設計</div>
+        <p class="sys-col-body">現行制度の構造的欠陥を特定し、持続可能な制度フレームワークとして再構築します。</p>
       </div>
-      <div class="sys-pillars fu">
-        <div class="pillar">
-          <div class="pillar-num">01</div>
-          <div class="pillar-en">REDESIGN SYSTEMS</div>
-          <div class="pillar-title">制度を再設計する</div>
-          <p class="pillar-body">現行制度の構造的欠陥を特定し、持続可能な制度フレームワークとして再構築します。</p>
-        </div>
-        <div class="pillar">
-          <div class="pillar-num">02</div>
-          <div class="pillar-en">CONNECT ORGANIZATIONS</div>
-          <div class="pillar-title">組織を接続する</div>
-          <p class="pillar-body">孤立した社会福祉法人をネットワーク化し、資源・人材・ノウハウを共有できる仕組みを構築します。</p>
-        </div>
-        <div class="pillar">
-          <div class="pillar-num">03</div>
-          <div class="pillar-en">BUILD INFRASTRUCTURE</div>
-          <div class="pillar-title">インフラを構築する</div>
-          <p class="pillar-body">データ・資本・経営の三要素を統合したデジタルインフラを設計・実装します。</p>
-        </div>
+      <div class="sys-col">
+        <div class="sys-col-num">02</div>
+        <div class="sys-col-en">Organization Connection</div>
+        <div class="sys-col-title">組織の移植</div>
+        <p class="sys-col-body">孤立した社会福祉法人をネットワーク化し、資源・人材・ノウハウを共有できる仕組みを構築します。</p>
+      </div>
+      <div class="sys-col">
+        <div class="sys-col-num">03</div>
+        <div class="sys-col-en">Infrastructure Build</div>
+        <div class="sys-col-title">インフラの構築</div>
+        <p class="sys-col-body">データ・資本・経営の三要素を統合したデジタルインフラを設計・実装します。</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- FENRIR MODEL -->
-<section class="s-model">
+<!-- PLATFORM MODEL -->
+<section class="s-platform">
   <div class="container">
-    <div class="sec-label fu" style="justify-content:center;">Fenrir Model</div>
-    <h2 class="sec-heading center fu">プラットフォーム化戦略</h2>
-    <p class="model-sub fu">社会福祉法人を持続可能なエコシステムへと転換する、5段階の設計プロセス</p>
-    <div class="model-steps stg">
-      <div class="model-step">
-        <div class="step-num">01</div>
-        <div class="step-en">ANALYSE</div>
-        <div class="step-title">現状解析</div>
-        <p class="step-body">法人・制度・地域の三層から課題の構造を解析し、介入すべきポイントを特定します。</p>
+    <div class="plat-layout">
+      <div class="plat-visual">
+        <canvas id="platCanvas"></canvas>
       </div>
-      <div class="model-step">
-        <div class="step-num">02</div>
-        <div class="step-en">DESIGN</div>
-        <div class="step-title">制度設計</div>
-        <p class="step-body">組織・業務・ITを統合した、再現可能な経営システムとして一から設計します。</p>
-      </div>
-      <div class="model-step">
-        <div class="step-num">03</div>
-        <div class="step-en">CONNECT</div>
-        <div class="step-title">組織接続</div>
-        <p class="step-body">複数法人をプラットフォームに接続し、共有インフラの土台を段階的に整えます。</p>
-      </div>
-      <div class="model-step">
-        <div class="step-num">04</div>
-        <div class="step-en">INTEGRATE</div>
-        <div class="step-title">統合実装</div>
-        <p class="step-body">データ・資本・人材を統合したエコシステムとして本格的に機能させます。</p>
-      </div>
-      <div class="model-step">
-        <div class="step-num">05</div>
-        <div class="step-en">EXPAND</div>
-        <div class="step-title">地域展開</div>
-        <p class="step-body">成功モデルを地域全体に展開し、自律的に成長するインフラとして定着させます。</p>
+      <div class="plat-text">
+        <div class="sec-label fu">Fenrir Model</div>
+        <h2 class="sec-heading fu">福祉ネットワークを<br>プラットフォーム化する。</h2>
+        <ul class="plat-list fu">
+          <li>生活支援事業の法人化・制度化支援</li>
+          <li>複数法人を接続するデジタルプラットフォーム構築</li>
+          <li>データ共有による経営効率の最大化</li>
+          <li>人材流通・採用支援のネットワーク化</li>
+          <li>資本調達・M&amp;A支援の統合スキーム</li>
+          <li>地域全体への自律的な展開・スケール</li>
+        </ul>
       </div>
     </div>
   </div>
 </section>
 
 <!-- BUSINESS UNITS -->
-<section class="s-business">
+<section class="s-business s-light">
   <div class="container">
-    <div class="sec-label fu">Business</div>
-    <h2 class="sec-heading fu">4つの事業部門</h2>
+    <div class="biz-header">
+      <div class="sec-label sec-label--dark fu">Business</div>
+      <h2 class="sec-heading sec-heading--dark fu">4つの事業で、<br>社会インフラを構築する。</h2>
+    </div>
     <div class="biz-grid stg">
-      <div class="biz-card">
+      <div class="biz-card biz-card--light">
         <div class="biz-num">01</div>
-        <div class="biz-en">Strategy Support</div>
-        <div class="biz-title">経営支援</div>
-        <p class="biz-body">財務・組織・業務の全体を統合的に再設計し、持続可能な経営基盤を構築します。</p>
-        <a href="business.html" class="biz-link">詳しく見る →</a>
+        <div class="biz-en">Management Support</div>
+        <div class="biz-title biz-title--dark">統括支援</div>
+        <p class="biz-body biz-body--dark">財務・組織・業務の全体を統合的に再設計し、持続可能な経営基盤を構築します。</p>
+        <a href="business.html" class="biz-link biz-link--dark">詳しく見る →</a>
       </div>
-      <div class="biz-card">
+      <div class="biz-card biz-card--light">
         <div class="biz-num">02</div>
-        <div class="biz-en">Network</div>
-        <div class="biz-title">法人連携</div>
-        <p class="biz-body">社会福祉法人間のネットワークを構築し、人材・資源・ノウハウの共有を実現します。</p>
-        <a href="business.html" class="biz-link">詳しく見る →</a>
+        <div class="biz-en">Corporation Support</div>
+        <div class="biz-title biz-title--dark">法人支援</div>
+        <p class="biz-body biz-body--dark">社会福祉法人間のネットワークを構築し、人材・資源・ノウハウの共有を実現します。</p>
+        <a href="business.html" class="biz-link biz-link--dark">詳しく見る →</a>
       </div>
-      <div class="biz-card">
+      <div class="biz-card biz-card--light">
         <div class="biz-num">03</div>
         <div class="biz-en">Platform / IT · AI · DX</div>
-        <div class="biz-title">IT/DX</div>
-        <p class="biz-body">現場の実態に即したデジタルインフラを設計・導入し、業務効率と質を両立させます。</p>
-        <a href="business.html" class="biz-link">詳しく見る →</a>
+        <div class="biz-title biz-title--dark">IT/AI・DX</div>
+        <p class="biz-body biz-body--dark">現場の実態に即したデジタルインフラを設計・導入し、業務効率と質を両立させます。</p>
+        <a href="business.html" class="biz-link biz-link--dark">詳しく見る →</a>
       </div>
-      <div class="biz-card">
+      <div class="biz-card biz-card--light">
         <div class="biz-num">04</div>
-        <div class="biz-en">Capital</div>
-        <div class="biz-title">資本連携</div>
-        <p class="biz-body">経営統合・資本調達・M&amp;A支援を通じて、法人の持続可能な成長を資本面から支えます。</p>
-        <a href="business.html" class="biz-link">詳しく見る →</a>
+        <div class="biz-en">Capital Alliance</div>
+        <div class="biz-title biz-title--dark">資本連携</div>
+        <p class="biz-body biz-body--dark">経営統合・資本調達・M&amp;A支援を通じて、法人の持続可能な成長を資本面から支えます。</p>
+        <a href="business.html" class="biz-link biz-link--dark">詳しく見る →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ECOSYSTEM -->
+<section class="s-ecosystem s-light">
+  <div class="container">
+    <div class="eco-layout">
+      <div class="eco-diagram fi">
+        <div class="diagram-wrap">
+          <div class="diagram eco-diagram-inner">
+            <div class="ring"></div>
+            <div class="ring"></div>
+            <div class="ring"></div>
+            <div class="ring"></div>
+            <div class="ring"></div>
+            <div class="ring-text">WELFARE<br>PLATFORM</div>
+          </div>
+        </div>
+      </div>
+      <div class="eco-text">
+        <div class="sec-label sec-label--dark fu">Ecosystem</div>
+        <h2 class="sec-heading sec-heading--dark fu">成長エンジンとしての<br>エコシステム</h2>
+        <p class="sec-body sec-body--dark fu">
+          社会福祉法人の経営・人材・資本を一体的にマネジメントする統合プラットフォームにより、各法人は単独では実現できない成長エンジンを獲得します。
+        </p>
+        <ul class="eco-list fu">
+          <li><span>Fenrir Management Module</span></li>
+          <li><span>Management Efficiency</span></li>
+          <li><span>Community Association</span></li>
+        </ul>
       </div>
     </div>
   </div>
 </section>
 
 <!-- CASE & RESULTS -->
-<section class="s-case">
+<section class="s-case s-light">
   <div class="container">
     <div class="sec-row">
       <div>
-        <div class="sec-label fu">Case &amp; Results</div>
-        <h2 class="sec-heading fu">導入実績</h2>
+        <div class="sec-label sec-label--dark fu">Case &amp; Results</div>
+        <h2 class="sec-heading sec-heading--dark fu">実績と取り組み</h2>
       </div>
-      <a href="case.html" class="link-more fu">すべての事例を見る</a>
+      <a href="case.html" class="link-more link-more--dark fu">すべての事例を見る</a>
     </div>
-    <div class="case-list fu">
-      <a href="case.html" class="case-item">
-        <div class="case-num">01</div>
-        <div class="case-info">
-          <div class="case-tag">DX Implementation</div>
-          <div class="case-title">介護記録システムのフルDX化により、月間80時間の業務削減を実現</div>
-        </div>
-        <span class="case-arr">→</span>
+    <div class="case-cards stg">
+      <a href="case.html" class="case-card">
+        <div class="case-card-tag">DX Implementation</div>
+        <div class="case-card-title">介護記録システムのフルDX化により、月間80時間の業務削減を実現</div>
+        <p class="case-card-body">複数施設にまたがる介護記録をクラウド統合。紙業務を完全撤廃し、現場スタッフの負担を大幅に軽減した。</p>
+        <span class="case-card-more">詳しく見る →</span>
       </a>
-      <a href="case.html" class="case-item">
-        <div class="case-num">02</div>
-        <div class="case-info">
-          <div class="case-tag">Management Reform</div>
-          <div class="case-title">慢性的赤字法人の経営構造改革——3年間で黒字転換を実現した組織再設計</div>
-        </div>
-        <span class="case-arr">→</span>
+      <a href="case.html" class="case-card">
+        <div class="case-card-tag">Management Reform</div>
+        <div class="case-card-title">慢性的赤字法人の経営構造改革——3年間で黒字転換を実現</div>
+        <p class="case-card-body">財務・組織・業務の三層から課題を整理し、持続可能な経営モデルへと再設計。3年以内に単年度黒字化を達成。</p>
+        <span class="case-card-more">詳しく見る →</span>
       </a>
-      <a href="case.html" class="case-item">
-        <div class="case-num">03</div>
-        <div class="case-info">
-          <div class="case-tag">Network Integration</div>
-          <div class="case-title">4法人のネットワーク統合により、地域福祉エコシステムの構築に成功</div>
-        </div>
-        <span class="case-arr">→</span>
+      <a href="case.html" class="case-card">
+        <div class="case-card-tag">Network Integration</div>
+        <div class="case-card-title">4法人のネットワーク統合により、地域福祉エコシステムの構築に成功</div>
+        <p class="case-card-body">独立していた4法人を共通プラットフォームに接続。人材・資源の共有により地域全体のケア品質が向上した。</p>
+        <span class="case-card-more">詳しく見る →</span>
       </a>
     </div>
   </div>
 </section>
 
 <!-- INSIGHT -->
-<section class="s-insight">
+<section class="s-insight s-off-white">
   <div class="container">
     <div class="sec-row">
       <div>
-        <div class="sec-label fu">Insight</div>
-        <h2 class="sec-heading fu">知見・論考</h2>
+        <div class="sec-label sec-label--dark fu">Insight</div>
+        <h2 class="sec-heading sec-heading--dark fu">知見</h2>
       </div>
-      <a href="insight.html" class="link-more fu">すべて見る</a>
+      <a href="insight.html" class="link-more link-more--dark fu">すべて見る</a>
     </div>
-    <div class="insight-grid stg">
-      <a href="insight.html" class="insight-card feat">
-        <div class="insight-thumb">
-          <span class="thumb-label">INSIGHT</span>
-        </div>
-        <div class="insight-body">
-          <div class="insight-tag">System Design</div>
-          <div class="insight-title">「仕組みを変える」とはどういうことか——フェンリルモデルが目指す社会システム再設計の思想</div>
-          <div class="insight-date">2026.04.01</div>
-        </div>
+    <div class="insight-items fu">
+      <a href="insight.html" class="insight-item">
+        <span class="insight-item-tag tag--system">System Design</span>
+        <span class="insight-item-title">「仕組みを変える」とはどういうことか——フェンリルモデルが目指す社会システム再設計の思想</span>
+        <span class="insight-item-date">2026.04.01</span>
       </a>
-      <a href="insight.html" class="insight-card">
-        <div class="insight-thumb sm">
-          <span class="thumb-label">DX</span>
-        </div>
-        <div class="insight-body">
-          <div class="insight-tag">Digital</div>
-          <div class="insight-title">福祉DXは「効率化」ではなく「設計の転換」である</div>
-          <div class="insight-date">2026.03.15</div>
-        </div>
+      <a href="insight.html" class="insight-item">
+        <span class="insight-item-tag tag--digital">Digital</span>
+        <span class="insight-item-title">福祉DXは「効率化」ではなく「設計の転換」である</span>
+        <span class="insight-item-date">2026.03.15</span>
       </a>
-      <a href="insight.html" class="insight-card">
-        <div class="insight-thumb sm">
-          <span class="thumb-label">POLICY</span>
-        </div>
-        <div class="insight-body">
-          <div class="insight-tag">Policy</div>
-          <div class="insight-title">選択格差のない社会に向けて——制度設計から始まる変革の処方箋</div>
-          <div class="insight-date">2026.02.28</div>
-        </div>
+      <a href="insight.html" class="insight-item">
+        <span class="insight-item-tag tag--policy">Policy</span>
+        <span class="insight-item-title">選択格差のない社会に向けて——制度設計から始まる変革の処方箋</span>
+        <span class="insight-item-date">2026.02.28</span>
       </a>
     </div>
   </div>
 </section>
 
-<!-- FOUNDER MESSAGE -->
-<section class="s-founder">
-  <div class="container">
-    <div class="founder-layout">
-      <div class="founder-photo fi">
-        <div class="photo-frame">
-          <span>FOUNDER</span>
-        </div>
-      </div>
-      <div class="founder-text">
-        <div class="sec-label fu">Founder Message</div>
-        <h2 class="sec-heading fu">なぜ、この会社を<br>つくったのか。</h2>
-        <div class="sec-divider fu"></div>
-        <p class="sec-body fu">
-          日本の社会福祉が直面している危機は、善意の不足でも、努力の不足でもありません。
-          それは、構造の問題です。
-        </p>
-        <p class="sec-body fu" style="margin-top:20px;">
-          懸命に働く人々、献身的なスタッフ、使命感あふれる経営者——
-          それでも仕組みが壊れていれば、人は疲弊し、組織は倒れます。
-          だから私たちは、人を変えるのではなく、仕組みを変えることを選びました。
-        </p>
-        <div class="founder-sig fu">
-          <div class="sig-role">代表取締役</div>
-          <div class="sig-company">Fenrir Innovations Inc.</div>
-        </div>
-      </div>
+<!-- CTA -->
+<section class="s-cta">
+  <div class="wrap">
+    <div class="cta-en fu">Next Society</div>
+    <h2 class="cta-title fu">選択肢のない社会へ。<br>次の社会を解き放つ。</h2>
+    <p class="cta-sub fu">フェンリルイノベーションズと共に、社会の仕組みを変えていきましょう。</p>
+    <div class="hero-btns fu">
+      <a href="contact.html" class="btn btn-gold">Contact Us</a>
+      <a href="about.html" class="btn btn-line">Fenrir Innovations へ</a>
     </div>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
+  <div class="foot-tagline-wrap">
+    <p class="foot-tagline-large fu">社会は、進化できる。</p>
+  </div>
   <div class="foot-wrap">
     <div class="foot-brand">
       <a href="index.html" class="logo">FENRIR <span>INNOVATIONS</span></a>
@@ -357,7 +343,6 @@
         <li><a href="insight.html">Insight</a></li>
         <li><a href="case.html">Case</a></li>
         <li><a href="recruit.html">Recruit</a></li>
-        <li><a href="#">FAQ</a></li>
       </ul>
     </div>
     <div class="foot-col">
@@ -369,7 +354,7 @@
     </div>
   </div>
   <div class="foot-bottom">
-    <span>© 2026−2026 フェンリルイノベーションズ</span>
+    <span>© 2026 フェンリルイノベーションズ</span>
     <span class="foot-tagline">Break the System. Design the Next.</span>
   </div>
 </footer>
