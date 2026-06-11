@@ -3,148 +3,297 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Business | Fenrir Innovations Inc.</title>
+  <title>Business | Fenrir Innovations</title>
+  <meta name="description" content="経営支援・法人連携・IT/DX・資本連携。フェンリルイノベーションズの4つの事業領域。">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;700&family=Noto+Sans+JP:wght@300;400;500&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <style>
-    .biz-detail { }
-    .biz-section { padding: 100px 0; border-bottom: 1px solid rgba(255,255,255,0.06); }
-    .biz-section:nth-child(odd) { background: var(--black); }
-    .biz-section:nth-child(even) { background: var(--dark-blue); }
-    .biz-section .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
-    .biz-section:nth-child(even) .wrap { direction: rtl; }
-    .biz-section:nth-child(even) .wrap > * { direction: ltr; }
-    .biz-visual { background: linear-gradient(135deg, rgba(201,162,74,0.08), rgba(111,163,200,0.06)); height: 360px; display: flex; align-items: center; justify-content: center; border: 1px solid rgba(201,162,74,0.12); }
-    .biz-visual-num { font-family: var(--font-en); font-size: 100px; font-weight: 300; color: rgba(201,162,74,0.15); }
-    .biz-detail-text p { font-size: 15px; color: var(--silver); line-height: 2.1; margin-bottom: 18px; }
-    .biz-feature-list { margin-top: 28px; display: flex; flex-direction: column; gap: 12px; }
-    .biz-feature { display: flex; align-items: flex-start; gap: 14px; font-size: 14px; color: var(--silver); }
-    .biz-feature::before { content: '—'; color: var(--gold); flex-shrink: 0; margin-top: 2px; }
-    @media(max-width:1024px){ .biz-section .wrap{grid-template-columns:1fr;} .biz-section:nth-child(even) .wrap{direction:ltr;} }
+    .biz-sec-num { font-family:var(--ff-en); font-size:clamp(80px,12vw,160px); font-weight:300; color:rgba(201,162,74,0.07); line-height:1; letter-spacing:-0.04em; margin-bottom:-20px; }
+    /* Overview 4-card grid */
+    .biz-overview-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:2px; margin-top:52px; }
+    .biz-overview-card { padding:44px 28px; background:rgba(255,255,255,0.02); border-top:2px solid rgba(201,162,74,0.2); transition:0.3s var(--ease); cursor:pointer; display:flex; flex-direction:column; }
+    .biz-overview-card:hover { border-top-color:var(--gold); background:rgba(201,162,74,0.04); transform:translateY(-4px); }
+    .biz-ov-num { font-family:var(--ff-en); font-size:10px; color:var(--gold); letter-spacing:0.3em; margin-bottom:18px; }
+    .biz-ov-en { font-family:var(--ff-en); font-size:9px; letter-spacing:0.18em; color:var(--gray); text-transform:uppercase; margin-bottom:12px; }
+    .biz-ov-title { font-size:20px; font-family:var(--ff-jp); font-weight:300; margin-bottom:14px; }
+    .biz-ov-body { font-size:13px; color:var(--silver); line-height:1.9; flex:1; }
+
+    /* Detail section — alternating layout */
+    .biz-detail { display:grid; grid-template-columns:1fr 1.4fr; gap:80px; align-items:start; }
+    .biz-detail.rev { grid-template-columns:1.4fr 1fr; }
+    .biz-detail.rev .biz-detail-left { order:2; }
+    .biz-detail.rev .biz-detail-right { order:1; }
+    .biz-detail-num { font-family:var(--ff-en); font-size:clamp(80px,10vw,130px); font-weight:300; color:rgba(201,162,74,0.06); line-height:1; letter-spacing:-0.04em; margin-bottom:-16px; }
+    .biz-services { list-style:none; margin-top:32px; display:flex; flex-direction:column; gap:0; }
+    .biz-services li { font-size:14px; color:var(--silver); padding:14px 0 14px 20px; border-bottom:1px solid rgba(255,255,255,0.06); position:relative; line-height:1.7; }
+    .biz-services li::before { content:''; position:absolute; left:0; top:50%; transform:translateY(-50%); width:6px; height:1px; background:var(--gold); }
+    .biz-outcome { margin-top:32px; padding:28px 32px; background:rgba(201,162,74,0.05); border-left:2px solid var(--gold); }
+    .biz-outcome-label { font-family:var(--ff-en); font-size:9px; letter-spacing:0.3em; color:var(--gold); text-transform:uppercase; margin-bottom:10px; }
+    .biz-outcome-text { font-size:13px; color:var(--silver); line-height:1.85; }
+    .biz-visual-block { background:rgba(255,255,255,0.02); border:1px solid rgba(201,162,74,0.12); display:flex; align-items:center; justify-content:center; min-height:320px; }
+    .biz-visual-inner { text-align:center; }
+    .biz-visual-icon { font-family:var(--ff-en); font-size:64px; font-weight:300; color:rgba(201,162,74,0.15); line-height:1; margin-bottom:16px; }
+    .biz-visual-label { font-family:var(--ff-en); font-size:10px; letter-spacing:0.35em; color:rgba(201,162,74,0.35); text-transform:uppercase; }
+
+    @media(max-width:1024px) {
+      .biz-overview-grid { grid-template-columns:repeat(2,1fr); }
+      .biz-detail,.biz-detail.rev { grid-template-columns:1fr; gap:40px; }
+      .biz-detail.rev .biz-detail-left,.biz-detail.rev .biz-detail-right { order:unset; }
+    }
+    @media(max-width:768px) {
+      .biz-overview-grid { grid-template-columns:1fr; }
+    }
   </style>
 </head>
 <body>
 
 <header id="header">
-  <a href="index.html" class="logo">FENRIR <span>INNOVATIONS</span></a>
-  <nav>
-    <a href="index.html">Home</a><a href="about.html">About</a><a href="system-design.html">System Design</a>
+  <div class="header-top">
+    <a href="index.html" class="logo-new">
+      <div class="logo-icon"><svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" width="42" height="42">
+          <circle cx="22" cy="22" r="20" stroke="rgba(255,255,255,0.85)" stroke-width="1.5"/>
+          <circle cx="22" cy="22" r="13" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+          <path d="M22 9v6M22 29v6M9 22h6M29 22h6" stroke="rgba(255,255,255,0.5)" stroke-width="1.2" stroke-linecap="round"/>
+          <path d="M13.5 13.5l4.2 4.2M26.3 26.3l4.2 4.2M30.5 13.5l-4.2 4.2M17.7 26.3l-4.2 4.2" stroke="rgba(255,255,255,0.3)" stroke-width="0.8" stroke-linecap="round"/>
+          <circle cx="22" cy="22" r="3.5" fill="rgba(255,255,255,0.75)"/>
+        </svg></div>
+      <span class="logo-wordmark">Fenrir <em>Innovations</em></span>
+    </a>
+    <div class="header-center-tag">Social System Design Company</div>
+    <div class="header-actions">
+      <button class="header-search-btn" type="button" aria-label="検索">
+        <svg viewBox="0 0 20 20" fill="none" width="18" height="18"><circle cx="8.5" cy="8.5" r="5.5" stroke="currentColor" stroke-width="1.5"/><path d="M13 13l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <span>検索</span>
+      </button>
+      <a href="contact.html" class="header-cta-btn">
+        <svg viewBox="0 0 20 16" fill="none" width="18" height="16"><rect x="1" y="1" width="18" height="14" rx="1" stroke="currentColor" stroke-width="1.5"/><path d="M1 3l9 7 9-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <span>お問い合わせ</span>
+      </a>
+    </div>
+    <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  </div>
+  <nav class="header-nav">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="system-design.html">System Design</a>
     <a href="business.html" class="active">Business</a>
-    <a href="insight.html">Insight</a><a href="case.html">Case</a><a href="recruit.html">Recruit</a>
-    <a href="contact.html" class="nav-cta">Contact</a>
+    <a href="insight.html">Insight</a>
+    <a href="case.html">Case</a>
+    <a href="recruit.html">Recruit</a>
+    <a href="contact.html" class="nav-contact">Contact</a>
   </nav>
-  <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
 </header>
 <div class="mobile-nav" id="mobileNav">
-  <a href="index.html">Home</a><a href="about.html">About</a><a href="system-design.html">System Design</a>
-  <a href="business.html">Business</a><a href="insight.html">Insight</a><a href="case.html">Case</a>
-  <a href="recruit.html">Recruit</a><a href="contact.html">Contact</a>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="system-design.html">System Design</a>
+  <a href="business.html">Business</a>
+  <a href="insight.html">Insight</a>
+  <a href="case.html">Case</a>
+  <a href="recruit.html">Recruit</a>
+  <a href="contact.html">Contact</a>
 </div>
 
 <div class="page-hero">
   <div class="page-hero-inner">
     <div class="page-hero-lbl">Business</div>
-    <h1 class="page-hero-title">4つの事業軸。</h1>
-    <div class="page-hero-en">Our Four Business Pillars</div>
+    <h1 class="page-hero-title">4つの事業で、<br>社会インフラを構築する。</h1>
+    <div class="page-hero-en">Business Domains</div>
   </div>
 </div>
 
-<div class="biz-detail">
-  <!-- BIZ 01 -->
-  <div class="biz-section">
-    <div class="wrap">
-      <div class="fu">
-        <div class="s-label">01 — Network Integration</div>
-        <h2 class="s-title">福祉法人<br>ネットワーク統合</h2>
-        <div class="s-divider"></div>
-        <div class="biz-detail-text">
-          <p>孤立した社会福祉法人を「プラットフォーム」へと接続し、経営資源・人材・ノウハウを共有する仕組みを構築します。これは単なる業務連携ではありません。法人同士が互いの強みを補完し合い、地域全体として機能するネットワーク設計です。</p>
-          <p>規模の論理を持てない小規模法人でも、ネットワークの一員として機能することで、大規模法人と同等以上の競争力と継続性を手に入れることができます。</p>
-        </div>
-        <div class="biz-feature-list">
-          <div class="biz-feature">法人間の機能・役割の最適配分設計</div>
-          <div class="biz-feature">共有バックオフィス機能（人事・経理・IT）の構築</div>
-          <div class="biz-feature">人材プールの形成と法人間での柔軟な配置</div>
-          <div class="biz-feature">ネットワーク全体のガバナンス設計</div>
-        </div>
+<!-- OVERVIEW -->
+<section style="background:var(--black);">
+  <div class="container" style="padding-top:100px;padding-bottom:100px;">
+    <div class="sec-label fu">Business Overview</div>
+    <h2 class="sec-heading fu">事業概要</h2>
+    <p class="sec-body fu" style="max-width:720px;margin-top:8px;">
+      フェンリルイノベーションズの事業は、社会福祉法人が抱える課題に対して「経営・連携・DX・資本」の四つの側面からアプローチし、統合的な社会インフラを構築します。
+    </p>
+    <div class="biz-overview-grid stg">
+      <div class="biz-overview-card">
+        <div class="biz-ov-num">01</div>
+        <div class="biz-ov-en">Management Support</div>
+        <div class="biz-ov-title">経営支援</div>
+        <p class="biz-ov-body">財務・組織・業務の全体を統合的に再設計し、持続可能な経営基盤を構築します。</p>
       </div>
-      <div class="biz-visual fi"><div class="biz-visual-num">01</div></div>
+      <div class="biz-overview-card">
+        <div class="biz-ov-num">02</div>
+        <div class="biz-ov-en">Network</div>
+        <div class="biz-ov-title">法人連携</div>
+        <p class="biz-ov-body">社会福祉法人間のネットワークを構築し、人材・資源・ノウハウの共有を実現します。</p>
+      </div>
+      <div class="biz-overview-card">
+        <div class="biz-ov-num">03</div>
+        <div class="biz-ov-en">Platform / IT · AI · DX</div>
+        <div class="biz-ov-title">IT / DX</div>
+        <p class="biz-ov-body">現場の実態に即したデジタルインフラを設計・導入し、業務効率と質を両立させます。</p>
+      </div>
+      <div class="biz-overview-card">
+        <div class="biz-ov-num">04</div>
+        <div class="biz-ov-en">Capital</div>
+        <div class="biz-ov-title">資本連携</div>
+        <p class="biz-ov-body">経営統合・資本調達・M&amp;A支援を通じて、法人の持続可能な成長を資本面から支えます。</p>
+      </div>
     </div>
   </div>
+</section>
 
-  <!-- BIZ 02 -->
-  <div class="biz-section">
-    <div class="wrap">
-      <div class="fu">
-        <div class="s-label">02 — Management Reform</div>
-        <h2 class="s-title">経営改革<br>コンサルティング</h2>
-        <div class="s-divider"></div>
-        <div class="biz-detail-text">
-          <p>財務・労務・IT・組織設計のすべてを統合的に再設計します。個別の問題を個別に解くのではなく、法人経営の「構造」を根本から変革することで、持続可能な経営基盤を構築します。</p>
-          <p>属人化した意思決定から、透明で再現可能なシステムへの移行。理念と経営数値が連動した組織への変革を実現します。</p>
-        </div>
-        <div class="biz-feature-list">
-          <div class="biz-feature">財務構造の可視化と収益改善設計</div>
-          <div class="biz-feature">組織設計と意思決定プロセスの再構築</div>
-          <div class="biz-feature">人事制度・評価制度の再設計</div>
-          <div class="biz-feature">理念浸透プログラムの策定と実施</div>
+<!-- 1. 経営支援 -->
+<section style="background:var(--navy);">
+  <div class="container" style="padding-top:120px;padding-bottom:120px;">
+    <div class="biz-detail">
+      <div class="biz-detail-left">
+        <div class="biz-sec-num fu">01</div>
+        <div class="sec-label fu">Management Support</div>
+        <h2 class="sec-heading fu">経営支援</h2>
+        <div class="sec-divider fu"></div>
+        <p class="sec-body fu">
+          社会福祉法人の経営は、財務・人事・業務・制度の複雑な絡み合いの中にあります。私たちは表面的なコンサルティングではなく、経営の構造そのものを再設計することで、持続可能な経営基盤を構築します。
+        </p>
+        <ul class="biz-services fu">
+          <li>財務構造の再設計と収支改善計画の策定</li>
+          <li>組織設計・人事制度・評価体系の構築</li>
+          <li>業務プロセス改革とオペレーション最適化</li>
+          <li>制度活用戦略と行政対応支援</li>
+          <li>経営者・後継者育成プログラムの設計</li>
+          <li>経営データの可視化とダッシュボード構築</li>
+        </ul>
+        <div class="biz-outcome fu">
+          <div class="biz-outcome-label">Expected Outcome</div>
+          <div class="biz-outcome-text">慢性的赤字法人の黒字転換、経営改善計画の達成、後継者育成と組織の自走化</div>
         </div>
       </div>
-      <div class="biz-visual fi"><div class="biz-visual-num">02</div></div>
+      <div class="biz-detail-right fi">
+        <div class="biz-visual-block">
+          <div class="biz-visual-inner">
+            <div class="biz-visual-icon">01</div>
+            <div class="biz-visual-label">Management Support</div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
+</section>
 
-  <!-- BIZ 03 -->
-  <div class="biz-section">
-    <div class="wrap">
-      <div class="fu">
-        <div class="s-label">03 — Digital Transformation</div>
-        <h2 class="s-title">福祉DX<br>プラットフォーム</h2>
-        <div class="s-divider"></div>
-        <div class="biz-detail-text">
-          <p>現場の負荷を削減するデジタル基盤を設計・導入します。単なるシステム導入ではなく、現場の実態に合わせた設計と運用定着を重視します。</p>
-          <p>介護記録・シフト管理・法人間連携・経営ダッシュボードをワンプラットフォームで実現。データ活用によって、経営の意思決定をより迅速・正確にします。</p>
-        </div>
-        <div class="biz-feature-list">
-          <div class="biz-feature">介護記録・申し送りのデジタル化</div>
-          <div class="biz-feature">シフト最適化・人材配置支援</div>
-          <div class="biz-feature">法人間データ共有基盤の設計</div>
-          <div class="biz-feature">経営ダッシュボード・KPI可視化</div>
+<!-- 2. 法人連携 -->
+<section style="background:var(--black);">
+  <div class="container" style="padding-top:120px;padding-bottom:120px;">
+    <div class="biz-detail rev">
+      <div class="biz-detail-left fi">
+        <div class="biz-visual-block">
+          <div class="biz-visual-inner">
+            <div class="biz-visual-icon">02</div>
+            <div class="biz-visual-label">Corporation Network</div>
+          </div>
         </div>
       </div>
-      <div class="biz-visual fi"><div class="biz-visual-num">03</div></div>
+      <div class="biz-detail-right">
+        <div class="biz-sec-num fu">02</div>
+        <div class="sec-label fu">Corporation Network</div>
+        <h2 class="sec-heading fu">法人連携</h2>
+        <div class="sec-divider fu"></div>
+        <p class="sec-body fu">
+          孤立した社会福祉法人が抱える限界は、「連携」によって突破できます。人材・資源・ノウハウを法人間で共有するネットワーク基盤を構築し、地域全体の福祉水準を底上げします。
+        </p>
+        <ul class="biz-services fu">
+          <li>法人間ネットワーク構築とガバナンス設計</li>
+          <li>人材流通・出向・採用支援の共有プラットフォーム</li>
+          <li>バックオフィス業務の共同化・集約化</li>
+          <li>共同調達・物品管理の効率化</li>
+          <li>法人間でのノウハウ・成功事例の横展開</li>
+          <li>地域行政・医療機関との連携体制の構築</li>
+        </ul>
+        <div class="biz-outcome fu">
+          <div class="biz-outcome-label">Expected Outcome</div>
+          <div class="biz-outcome-text">採用コストの削減、人材定着率の向上、固定費の削減と地域福祉力の向上</div>
+        </div>
+      </div>
     </div>
   </div>
+</section>
 
-  <!-- BIZ 04 -->
-  <div class="biz-section">
-    <div class="wrap">
-      <div class="fu">
-        <div class="s-label">04 — Policy Advocacy</div>
-        <h2 class="s-title">政策提言・<br>社会インフラ設計</h2>
-        <div class="s-divider"></div>
-        <div class="biz-detail-text">
-          <p>現場知見に基づいた政策提言を通じて、社会福祉制度そのものの設計に参与します。これは私たちが目指す「社会システム設計」の最上位に位置する活動です。</p>
-          <p>個別法人の改革を積み重ねながら得られた知見を、制度設計へとフィードバック。現場から政策を変える循環を作り出します。</p>
-        </div>
-        <div class="biz-feature-list">
-          <div class="biz-feature">行政・自治体との協働プロジェクト</div>
-          <div class="biz-feature">社会福祉制度に関するリサーチ・提言</div>
-          <div class="biz-feature">学術機関との共同研究</div>
-          <div class="biz-feature">地域福祉エコシステムのモデル化・横展開</div>
+<!-- 3. IT / DX -->
+<section style="background:var(--navy);">
+  <div class="container" style="padding-top:120px;padding-bottom:120px;">
+    <div class="biz-detail">
+      <div class="biz-detail-left">
+        <div class="biz-sec-num fu">03</div>
+        <div class="sec-label fu">Platform / IT · AI · DX</div>
+        <h2 class="sec-heading fu">IT / DX</h2>
+        <div class="sec-divider fu"></div>
+        <p class="sec-body fu">
+          現場の実態から乖離したシステム導入は失敗します。私たちは現場スタッフの業務フローを丁寧に把握した上で、現場に根ざしたデジタルインフラを設計・導入します。AIを活用した次世代の福祉DXを実現します。
+        </p>
+        <ul class="biz-services fu">
+          <li>介護記録・ケアプランのデジタル化とクラウド統合</li>
+          <li>AI活用による業務負担軽減（記録・シフト・請求）</li>
+          <li>経営管理システムとリアルタイム財務ダッシュボード</li>
+          <li>人材管理・労務管理プラットフォームの構築</li>
+          <li>法人間データ連携基盤の設計と実装</li>
+          <li>セキュリティ・プライバシー対応のシステム設計</li>
+        </ul>
+        <div class="biz-outcome fu">
+          <div class="biz-outcome-label">Expected Outcome</div>
+          <div class="biz-outcome-text">月間業務時間の大幅削減、ペーパーレス化、データドリブンな経営判断の実現</div>
         </div>
       </div>
-      <div class="biz-visual fi"><div class="biz-visual-num">04</div></div>
+      <div class="biz-detail-right fi">
+        <div class="biz-visual-block">
+          <div class="biz-visual-inner">
+            <div class="biz-visual-icon">03</div>
+            <div class="biz-visual-label">IT / AI · DX</div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-</div>
+</section>
+
+<!-- 4. 資本連携 -->
+<section style="background:var(--black);">
+  <div class="container" style="padding-top:120px;padding-bottom:120px;">
+    <div class="biz-detail rev">
+      <div class="biz-detail-left fi">
+        <div class="biz-visual-block">
+          <div class="biz-visual-inner">
+            <div class="biz-visual-icon">04</div>
+            <div class="biz-visual-label">Capital Alliance</div>
+          </div>
+        </div>
+      </div>
+      <div class="biz-detail-right">
+        <div class="biz-sec-num fu">04</div>
+        <div class="sec-label fu">Capital Alliance</div>
+        <h2 class="sec-heading fu">資本連携</h2>
+        <div class="sec-divider fu"></div>
+        <p class="sec-body fu">
+          社会福祉法人の持続的な成長には、資本面からの支援が不可欠です。経営統合・M&amp;A・社会的インパクト投資を活用し、法人が安定した財務基盤を持ちながら社会使命を全うできるよう支援します。
+        </p>
+        <ul class="biz-services fu">
+          <li>法人間の経営統合・合併スキームの設計と実行</li>
+          <li>M&amp;Aアドバイザリー（事業承継・買収・譲渡）</li>
+          <li>社会的インパクト投資・ファンド調達支援</li>
+          <li>補助金・助成金の戦略的活用支援</li>
+          <li>銀行・金融機関との融資交渉サポート</li>
+          <li>資本政策・財務戦略の立案と実行支援</li>
+        </ul>
+        <div class="biz-outcome fu">
+          <div class="biz-outcome-label">Expected Outcome</div>
+          <div class="biz-outcome-text">事業承継問題の解決、財務健全化、スケールアップによる地域影響力の拡大</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section class="s-cta">
   <div class="wrap">
     <div class="cta-en fu">Get Started</div>
-    <h2 class="cta-title fu">まずは、課題を<br>お聞かせください。</h2>
+    <h2 class="cta-title fu">事業についての<br>ご相談はこちらから。</h2>
+    <p class="cta-sub fu">経営支援・法人連携・DX・資本連携、どのテーマからでもお気軽にご相談ください。</p>
     <div class="hero-btns fu">
       <a href="contact.html" class="btn btn-gold">お問い合わせ</a>
       <a href="case.html" class="btn btn-line">導入事例を見る</a>
@@ -153,15 +302,21 @@
 </section>
 
 <footer>
-  <div class="foot-inner">
-    <div class="foot-brand"><a href="index.html" class="logo">FENRIR <span>INNOVATIONS</span></a><p>フェンリルイノベーションズ<br>社会システム設計企業</p></div>
-    <div><div class="foot-ttl">Company</div><ul class="foot-list"><li><a href="about.html">About</a></li><li><a href="system-design.html">System Design</a></li><li><a href="business.html">Business</a></li></ul></div>
-    <div><div class="foot-ttl">Content</div><ul class="foot-list"><li><a href="insight.html">Insight</a></li><li><a href="case.html">Case</a></li><li><a href="recruit.html">Recruit</a></li></ul></div>
-    <div><div class="foot-ttl">Contact</div><ul class="foot-list"><li><a href="contact.html">お問い合わせ</a></li><li><a href="#">プライバシーポリシー</a></li></ul></div>
+  <div class="foot-tagline-wrap">
+    <p class="foot-tagline-large">社会は、進化できる。</p>
+  </div>
+  <div class="foot-wrap">
+    <div class="foot-brand">
+      <a href="index.html" class="logo">FENRIR <span>INNOVATIONS</span></a>
+      <p>フェンリルイノベーションズ<br>社会システム設計企業</p>
+    </div>
+    <div class="foot-col"><div class="foot-col-title">Company</div><ul><li><a href="about.html">About</a></li><li><a href="system-design.html">System Design</a></li><li><a href="business.html">Business</a></li></ul></div>
+    <div class="foot-col"><div class="foot-col-title">Content</div><ul><li><a href="insight.html">Insight</a></li><li><a href="case.html">Case</a></li><li><a href="recruit.html">Recruit</a></li></ul></div>
+    <div class="foot-col"><div class="foot-col-title">Contact</div><ul><li><a href="contact.html">お問い合わせ</a></li><li><a href="#">プライバシーポリシー</a></li></ul></div>
   </div>
   <div class="foot-bottom">
-    <span class="foot-copy">© 2026−2026 フェンリルイノベーションズ</span>
-    <span class="foot-copy" style="color:var(--gold);">Break the System. Design the Next.</span>
+    <span>© 2026 フェンリルイノベーションズ</span>
+    <span class="foot-tagline">Break the System. Design the Next.</span>
   </div>
 </footer>
 <script src="script.js"></script>

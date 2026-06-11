@@ -3,43 +3,97 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About | Fenrir Innovations Inc.</title>
+  <title>About | Fenrir Innovations</title>
+  <meta name="description" content="フェンリルイノベーションズとは何者か。社会課題・ビジョン・フェンリル原則・会社概要。">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;700&family=Noto+Sans+JP:wght@300;400;500&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <style>
-    .about-philosophy { background: var(--dark-blue); }
-    .about-philosophy .wrap { padding-top: 120px; padding-bottom: 120px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
-    .phil-body p { font-size: 15px; color: var(--silver); line-height: 2.1; margin-bottom: 20px; }
-    .mvv { background: var(--black); }
-    .mvv .wrap { padding-top: 120px; padding-bottom: 120px; }
-    .mvv-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; margin-top: 52px; }
-    .mvv-card { padding: 48px 36px; border-top: 2px solid var(--gold); background: rgba(15,42,68,0.15); }
-    .mvv-en { font-family: var(--font-en); font-size: 11px; letter-spacing: 0.4em; color: var(--gold); text-transform: uppercase; margin-bottom: 20px; }
-    .mvv-title { font-size: 22px; margin-bottom: 20px; }
-    .mvv-body { font-size: 14px; color: var(--silver); line-height: 2; }
-    .founder { background: var(--dark-blue); }
-    .founder .wrap { padding-top: 120px; padding-bottom: 120px; display: grid; grid-template-columns: 1fr 2fr; gap: 80px; align-items: start; }
-    .founder-avatar { width: 100%; aspect-ratio: 3/4; background: linear-gradient(160deg, rgba(201,162,74,0.1), rgba(111,163,200,0.08)); display: flex; align-items: center; justify-content: center; font-family: var(--font-en); font-size: 48px; color: rgba(201,162,74,0.2); border: 1px solid rgba(201,162,74,0.15); }
-    .founder-name { font-size: 28px; margin-bottom: 8px; }
-    .founder-role { font-family: var(--font-en); font-size: 10px; letter-spacing: 0.35em; color: var(--gold); text-transform: uppercase; margin-bottom: 32px; }
-    .founder-msg p { font-size: 15px; color: var(--silver); line-height: 2.2; margin-bottom: 20px; }
-    .company-info { background: var(--black); }
-    .company-info .wrap { padding-top: 120px; padding-bottom: 120px; }
-    .info-table { margin-top: 52px; border-top: 1px solid rgba(255,255,255,0.07); }
-    .info-row { display: grid; grid-template-columns: 200px 1fr; border-bottom: 1px solid rgba(255,255,255,0.07); padding: 24px 0; }
-    .info-key { font-family: var(--font-en); font-size: 10px; letter-spacing: 0.3em; color: var(--gold); text-transform: uppercase; padding-right: 32px; align-self: start; margin-top: 2px; }
-    .info-val { font-size: 15px; color: var(--silver); line-height: 1.8; }
-    @media(max-width:1024px){ .about-philosophy .wrap,.founder .wrap{grid-template-columns:1fr;gap:40px;} .mvv-grid{grid-template-columns:1fr;} }
-    @media(max-width:768px){ .info-row{grid-template-columns:1fr;gap:8px;} }
+    /* ---- page-specific ---- */
+    .ab-intro-layout { display: grid; grid-template-columns: 1fr 1.4fr; gap: 80px; align-items: start; }
+    .ab-intro-num { font-family: var(--ff-en); font-size: clamp(80px,12vw,160px); font-weight: 300; color: rgba(201,162,74,0.08); line-height: 1; letter-spacing: -0.04em; margin-bottom: -20px; }
+
+    .ab-issues-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+    .ab-issues-stats { display: flex; flex-direction: column; gap: 2px; margin-top: 40px; }
+    .ab-stat-row { display: flex; align-items: center; gap: 24px; padding: 20px 24px; background: rgba(255,255,255,0.03); border-left: 2px solid rgba(201,162,74,0.3); }
+    .ab-stat-num { font-family: var(--ff-en); font-size: 40px; font-weight: 300; color: var(--gold); line-height: 1; min-width: 90px; }
+    .ab-stat-desc { font-size: 13px; color: var(--silver); line-height: 1.75; }
+
+    .ab-ssd-cols { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; margin-top: 52px; }
+    .ab-ssd-card { padding: 48px 32px; background: rgba(255,255,255,0.02); border-top: 2px solid rgba(201,162,74,0.25); transition: 0.3s var(--ease); }
+    .ab-ssd-card:hover { background: rgba(201,162,74,0.04); border-top-color: var(--gold); }
+    .ab-ssd-num { font-family: var(--ff-en); font-size: 10px; letter-spacing: 0.35em; color: var(--gold); margin-bottom: 10px; }
+    .ab-ssd-en { font-family: var(--ff-en); font-size: 9px; letter-spacing: 0.2em; color: var(--gray); text-transform: uppercase; margin-bottom: 16px; }
+    .ab-ssd-title { font-size: 20px; font-family: var(--ff-jp); font-weight: 300; margin-bottom: 14px; }
+    .ab-ssd-body { font-size: 13px; color: var(--silver); line-height: 1.9; }
+
+    .ab-vision-wrap { text-align: center; padding: 100px 0; position: relative; }
+    .ab-vision-en { font-family: var(--ff-en); font-size: 10px; letter-spacing: 0.55em; color: var(--gold); text-transform: uppercase; margin-bottom: 36px; display: flex; align-items: center; justify-content: center; gap: 16px; }
+    .ab-vision-en::before, .ab-vision-en::after { content: ''; display: block; width: 40px; height: 1px; background: var(--gold); }
+    .ab-vision-text { font-family: var(--ff-jp); font-size: clamp(20px,3.2vw,42px); font-weight: 300; line-height: 1.7; color: var(--white); max-width: 820px; margin: 0 auto 48px; }
+    .ab-vision-sub { font-size: 14px; color: var(--gray); max-width: 600px; margin: 0 auto; line-height: 2; }
+
+    .ab-principles { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; margin-top: 52px; }
+    .ab-principle { padding: 40px 32px; background: rgba(255,255,255,0.02); position: relative; transition: 0.3s var(--ease); }
+    .ab-principle::before { content: ''; position: absolute; top: 0; left: 0; width: 0; height: 2px; background: var(--gold); transition: 0.4s var(--ease); }
+    .ab-principle:hover::before { width: 100%; }
+    .ab-principle:hover { background: rgba(201,162,74,0.04); }
+    .ab-p-num { font-family: var(--ff-en); font-size: 28px; font-weight: 300; color: rgba(201,162,74,0.2); line-height: 1; margin-bottom: 16px; }
+    .ab-p-title { font-size: 18px; font-family: var(--ff-jp); font-weight: 300; margin-bottom: 12px; }
+    .ab-p-en { font-family: var(--ff-en); font-size: 9px; letter-spacing: 0.2em; color: var(--gold); text-transform: uppercase; margin-bottom: 16px; }
+    .ab-p-body { font-size: 13px; color: var(--silver); line-height: 1.9; }
+
+    .ab-name-layout { display: grid; grid-template-columns: 1fr 1.5fr; gap: 80px; align-items: center; }
+    .ab-name-icon { display: flex; align-items: center; justify-content: center; }
+    .ab-name-circle { width: 240px; height: 240px; border-radius: 50%; border: 1px solid rgba(201,162,74,0.25); display: flex; align-items: center; justify-content: center; position: relative; }
+    .ab-name-circle::after { content: ''; position: absolute; width: 180px; height: 180px; border-radius: 50%; border: 1px solid rgba(201,162,74,0.15); }
+    .ab-name-circle span { font-family: var(--ff-en); font-size: 48px; font-weight: 300; color: rgba(201,162,74,0.4); letter-spacing: 0.1em; z-index: 1; }
+    .ab-name-body p { font-size: 15px; color: var(--silver); line-height: 2.2; margin-bottom: 20px; }
+
+    .info-table { margin-top: 48px; border-top: 1px solid rgba(255,255,255,0.07); }
+    .info-row { display: grid; grid-template-columns: 200px 1fr; border-bottom: 1px solid rgba(255,255,255,0.07); padding: 22px 0; }
+    .info-key { font-family: var(--ff-en); font-size: 10px; letter-spacing: 0.3em; color: var(--gold); text-transform: uppercase; padding-right: 32px; align-self: start; margin-top: 2px; }
+    .info-val { font-size: 14px; color: var(--silver); line-height: 1.85; }
+
+    @media(max-width:1024px) {
+      .ab-intro-layout,.ab-issues-grid,.ab-name-layout { grid-template-columns:1fr; gap:40px; }
+      .ab-ssd-cols,.ab-principles { grid-template-columns:1fr 1fr; }
+    }
+    @media(max-width:768px) {
+      .ab-ssd-cols,.ab-principles { grid-template-columns:1fr; }
+      .info-row { grid-template-columns:1fr; gap:6px; }
+    }
   </style>
 </head>
 <body>
 
 <header id="header">
-  <a href="index.html" class="logo">FENRIR <span>INNOVATIONS</span></a>
-  <nav>
+  <div class="header-top">
+    <a href="index.html" class="logo-new">
+      <div class="logo-icon"><svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" width="42" height="42">
+          <circle cx="22" cy="22" r="20" stroke="rgba(255,255,255,0.85)" stroke-width="1.5"/>
+          <circle cx="22" cy="22" r="13" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+          <path d="M22 9v6M22 29v6M9 22h6M29 22h6" stroke="rgba(255,255,255,0.5)" stroke-width="1.2" stroke-linecap="round"/>
+          <path d="M13.5 13.5l4.2 4.2M26.3 26.3l4.2 4.2M30.5 13.5l-4.2 4.2M17.7 26.3l-4.2 4.2" stroke="rgba(255,255,255,0.3)" stroke-width="0.8" stroke-linecap="round"/>
+          <circle cx="22" cy="22" r="3.5" fill="rgba(255,255,255,0.75)"/>
+        </svg></div>
+      <span class="logo-wordmark">Fenrir <em>Innovations</em></span>
+    </a>
+    <div class="header-center-tag">Social System Design Company</div>
+    <div class="header-actions">
+      <button class="header-search-btn" type="button" aria-label="検索">
+        <svg viewBox="0 0 20 20" fill="none" width="18" height="18"><circle cx="8.5" cy="8.5" r="5.5" stroke="currentColor" stroke-width="1.5"/><path d="M13 13l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <span>検索</span>
+      </button>
+      <a href="contact.html" class="header-cta-btn">
+        <svg viewBox="0 0 20 16" fill="none" width="18" height="16"><rect x="1" y="1" width="18" height="14" rx="1" stroke="currentColor" stroke-width="1.5"/><path d="M1 3l9 7 9-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <span>お問い合わせ</span>
+      </a>
+    </div>
+    <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  </div>
+  <nav class="header-nav">
     <a href="index.html">Home</a>
     <a href="about.html" class="active">About</a>
     <a href="system-design.html">System Design</a>
@@ -47,14 +101,18 @@
     <a href="insight.html">Insight</a>
     <a href="case.html">Case</a>
     <a href="recruit.html">Recruit</a>
-    <a href="contact.html" class="nav-cta">Contact</a>
+    <a href="contact.html" class="nav-contact">Contact</a>
   </nav>
-  <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
 </header>
 <div class="mobile-nav" id="mobileNav">
-  <a href="index.html">Home</a><a href="about.html">About</a><a href="system-design.html">System Design</a>
-  <a href="business.html">Business</a><a href="insight.html">Insight</a><a href="case.html">Case</a>
-  <a href="recruit.html">Recruit</a><a href="contact.html">Contact</a>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="system-design.html">System Design</a>
+  <a href="business.html">Business</a>
+  <a href="insight.html">Insight</a>
+  <a href="case.html">Case</a>
+  <a href="recruit.html">Recruit</a>
+  <a href="contact.html">Contact</a>
 </div>
 
 <!-- PAGE HERO -->
@@ -66,112 +124,217 @@
   </div>
 </div>
 
-<!-- PHILOSOPHY -->
-<section class="about-philosophy">
-  <div class="wrap">
-    <div>
-      <div class="s-label fu">Philosophy</div>
-      <h2 class="s-title fu">社会システムの<br>設計者として。</h2>
-      <div class="s-divider fu"></div>
-    </div>
-    <div class="phil-body fu">
-      <p>
-        フェンリルイノベーションズ株式会社は、単なる福祉施設の運営会社ではありません。
-        私たちは、社会福祉という「インフラ」を再設計することを使命とする、
-        社会システム設計会社です。
-      </p>
-      <p>
-        日本の社会福祉は今、深刻な構造的危機に直面しています。
-        少子高齢化の加速、介護人材の慢性的不足、法人経営の疲弊——
-        これらは個別の問題ではなく、制度・組織・文化が複雑に絡み合った「構造問題」です。
-      </p>
-      <p>
-        この問題に対して、私たちは症状への対処ではなく、問題が生まれる構造そのものを変えることで応えます。
-        社会福祉法人同士をネットワーク化し、経営統合によって規模を持ち、
-        テクノロジーと制度設計の力で地域福祉の仕組みを根本から再構築する。
-        それが、フェンリルイノベーションズの存在理由です。
-      </p>
-    </div>
-  </div>
-</section>
-
-<!-- MISSION / VISION / VALUES -->
-<section class="mvv">
-  <div class="wrap">
-    <div class="s-label fu">Mission / Vision / Values</div>
-    <h2 class="s-title fu">理念体系</h2>
-    <div class="mvv-grid stg">
-      <div class="mvv-card">
-        <div class="mvv-en">Mission</div>
-        <div class="mvv-title">使命</div>
-        <div class="mvv-body">社会福祉法人のネットワーク化と経営統合を通じて、持続可能な地域福祉エコシステムを構築する。</div>
+<!-- 1. FENRIR INNOVATIONS とは -->
+<section style="background:var(--navy);">
+  <div class="container" style="padding-top:120px;padding-bottom:120px;">
+    <div class="ab-intro-layout">
+      <div>
+        <div class="ab-intro-num">01</div>
+        <div class="sec-label fu">About Us</div>
+        <h2 class="sec-heading fu">Fenrir Innovations<br>とは</h2>
+        <div class="sec-divider fu"></div>
+        <a href="system-design.html" class="link-more fu" style="margin-top:32px;display:inline-flex;">System Design を見る</a>
       </div>
-      <div class="mvv-card">
-        <div class="mvv-en">Vision</div>
-        <div class="mvv-title">ビジョン</div>
-        <div class="mvv-body">すべての地域に、誰もが安心して老いられる社会インフラが存在する世界を実現する。</div>
-      </div>
-      <div class="mvv-card">
-        <div class="mvv-en">Values</div>
-        <div class="mvv-title">価値観</div>
-        <div class="mvv-body">思想なき行動は浪費。行動なき思想は空論。私たちは、思想と実装を一体として追求します。</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FOUNDER MESSAGE -->
-<section class="founder">
-  <div class="wrap">
-    <div class="fu">
-      <div class="founder-avatar">F</div>
-    </div>
-    <div class="fu">
-      <div class="s-label">Founder's Message</div>
-      <div class="founder-name">代表取締役　山田 誠一</div>
-      <div class="founder-role">CEO / Founder</div>
-      <div class="founder-msg">
-        <p>
-          私がこの会社を設立しようと決意したのは、一つの問いからでした。
-          「なぜ、善意で運営されている福祉施設が次々と経営難に陥るのか」。
+      <div class="fu">
+        <p class="sec-body" style="margin-bottom:24px;">
+          フェンリルイノベーションズは、社会福祉という「インフラ」を再設計することを使命とする、社会システム設計会社です。単なる福祉施設の運営会社でも、コンサルティング会社でもありません。
         </p>
-        <p>
-          答えは明快でした。問題は人でも志でもなく、「構造」にある。
-          個別施設がいかに頑張っても、孤立した状態では規模の論理に勝てません。
-          人材も、資金も、ノウハウも、分散したままでは消耗するだけです。
+        <p class="sec-body" style="margin-bottom:24px;">
+          私たちのアプローチは、問題の「症状」への対処ではなく、問題が生まれる「構造」そのものを変えることです。社会福祉法人同士をネットワーク化し、経営統合によって規模の力を持ち、テクノロジーと制度設計で地域福祉の仕組みを根本から再構築する。
         </p>
-        <p>
-          だからこそ、私たちは「統合」という思想を選びました。
-          競争ではなく連携。個別最適ではなく全体設計。
-          フェンリルイノベーションズは、そのための会社です。
-          共に設計しましょう。社会福祉の、新しいインフラを。
+        <p class="sec-body">
+          それがフェンリルイノベーションズの存在理由です。
         </p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- COMPANY INFO -->
-<section class="company-info">
-  <div class="wrap">
-    <div class="s-label fu">Company Info</div>
-    <h2 class="s-title fu">会社概要</h2>
+<!-- 2. 社会課題 -->
+<section style="background:var(--black);">
+  <div class="container" style="padding-top:120px;padding-bottom:120px;">
+    <div class="ab-issues-grid">
+      <div>
+        <div class="ab-intro-num">02</div>
+        <div class="sec-label fu">Social Issues</div>
+        <h2 class="sec-heading fu">社会課題</h2>
+        <div class="sec-divider fu"></div>
+        <p class="sec-body fu">
+          日本の社会福祉は今、深刻な構造的危機に直面しています。少子高齢化の加速、介護人材の慢性的不足、法人経営の疲弊——これらは個別の問題ではなく、制度・組織・文化が複雑に絡み合った「構造問題」です。
+        </p>
+      </div>
+      <div class="ab-issues-stats stg">
+        <div class="ab-stat-row">
+          <div class="ab-stat-num">70<span style="font-size:20px;">%</span></div>
+          <div class="ab-stat-desc">の法人が深刻な人材不足に直面しており、<br>現場スタッフの疲弊が加速している</div>
+        </div>
+        <div class="ab-stat-row">
+          <div class="ab-stat-num">40<span style="font-size:20px;">%</span></div>
+          <div class="ab-stat-desc">の事業者で後継者が不在のまま、<br>経営者の高齢化が進んでいる</div>
+        </div>
+        <div class="ab-stat-row">
+          <div class="ab-stat-num">60<span style="font-size:20px;">%</span></div>
+          <div class="ab-stat-desc">の法人が早急な経営改善を必要とする状態にあり、<br>制度的な限界が露呈している</div>
+        </div>
+        <div class="ab-stat-row">
+          <div class="ab-stat-num">2<span style="font-size:20px;">倍</span></div>
+          <div class="ab-stat-desc">2040年までに介護需要は約2倍に拡大する一方、<br>担い手の供給は追いつかない見通し</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. 社会システム設計とは -->
+<section style="background:var(--navy);">
+  <div class="container" style="padding-top:120px;padding-bottom:120px;">
+    <div class="ab-intro-num fu">03</div>
+    <div class="sec-label fu">What We Do</div>
+    <h2 class="sec-heading fu">社会システム設計とは</h2>
+    <p class="sec-body fu" style="max-width:760px;margin-top:8px;margin-bottom:0;">
+      「社会システム設計」とは、個別の施設や法人を改善することではなく、それらをつなぎ、動かす「構造」そのものを設計し直すことです。制度・組織・インフラの三層を同時に再設計することで、持続可能な変革を実現します。
+    </p>
+    <div class="ab-ssd-cols stg">
+      <div class="ab-ssd-card">
+        <div class="ab-ssd-num">01</div>
+        <div class="ab-ssd-en">Policy Redesign</div>
+        <div class="ab-ssd-title">制度の再設計</div>
+        <p class="ab-ssd-body">現行制度の構造的欠陥を特定し、持続可能な制度フレームワークとして再構築します。規制の隙間を埋め、法人が本来の使命に集中できる制度環境を設計します。</p>
+      </div>
+      <div class="ab-ssd-card">
+        <div class="ab-ssd-num">02</div>
+        <div class="ab-ssd-en">Organization Connection</div>
+        <div class="ab-ssd-title">組織の接続</div>
+        <p class="ab-ssd-body">孤立した社会福祉法人をネットワーク化し、資源・人材・ノウハウを共有できる仕組みを構築します。「競争」から「連携」へ、組織間の関係性を根本から変えます。</p>
+      </div>
+      <div class="ab-ssd-card">
+        <div class="ab-ssd-num">03</div>
+        <div class="ab-ssd-en">Infrastructure Build</div>
+        <div class="ab-ssd-title">インフラの構築</div>
+        <p class="ab-ssd-body">データ・資本・経営の三要素を統合したデジタルインフラを設計・実装します。現場の実態に即したテクノロジーで、持続可能な福祉基盤を構築します。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. ビジョン -->
+<section style="background:var(--black);border-top:1px solid rgba(201,162,74,0.08);border-bottom:1px solid rgba(201,162,74,0.08);">
+  <div class="container">
+    <div class="ab-vision-wrap">
+      <div class="ab-vision-en fu">Vision</div>
+      <div class="ab-intro-num fu" style="font-size:clamp(60px,10vw,120px);margin-bottom:0;color:rgba(201,162,74,0.06);">04</div>
+      <p class="ab-vision-text fu">
+        すべての地域に、<br>誰もが安心して老いられる<br>社会インフラが存在する世界を。
+      </p>
+      <p class="ab-vision-sub fu">
+        生まれた場所や経済的背景によって、受けられるケアの質が変わる——そんな「選択格差」をなくすことが、フェンリルイノベーションズが描く未来です。社会の仕組みを設計し直すことで、誰も取り残されない社会インフラを実現します。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- 5. フェンリル原則 -->
+<section style="background:var(--navy);">
+  <div class="container" style="padding-top:120px;padding-bottom:120px;">
+    <div class="ab-intro-num fu">05</div>
+    <div class="sec-label fu">Our Principles</div>
+    <h2 class="sec-heading fu">フェンリル原則</h2>
+    <p class="sec-body fu" style="max-width:680px;margin-top:8px;margin-bottom:0;">
+      フェンリルイノベーションズが行動する際の拠り所となる、6つの原則です。
+    </p>
+    <div class="ab-principles stg">
+      <div class="ab-principle">
+        <div class="ab-p-num">I</div>
+        <div class="ab-p-en">Structure First</div>
+        <div class="ab-p-title">構造に介入する</div>
+        <p class="ab-p-body">症状ではなく、問題を生む構造そのものを変える。個別最適ではなく、全体設計を優先する。</p>
+      </div>
+      <div class="ab-principle">
+        <div class="ab-p-num">II</div>
+        <div class="ab-p-en">Systems Thinking</div>
+        <div class="ab-p-title">仕組みで解く</div>
+        <p class="ab-p-body">人の善意や努力に頼るのではなく、仕組みによって自然と良い結果が生まれる設計を追求する。</p>
+      </div>
+      <div class="ab-principle">
+        <div class="ab-p-num">III</div>
+        <div class="ab-p-en">Integration</div>
+        <div class="ab-p-title">統合で実現する</div>
+        <p class="ab-p-body">孤立した組織・制度・データを繋ぐことで、単体では不可能なことを可能にする。</p>
+      </div>
+      <div class="ab-principle">
+        <div class="ab-p-num">IV</div>
+        <div class="ab-p-en">Evidence Based</div>
+        <div class="ab-p-title">データで証明する</div>
+        <p class="ab-p-body">思想と実装を一体として追求する。理念なき行動は浪費であり、行動なき理念は空論である。</p>
+      </div>
+      <div class="ab-principle">
+        <div class="ab-p-num">V</div>
+        <div class="ab-p-en">Long-term Design</div>
+        <div class="ab-p-title">次世代へ繋ぐ</div>
+        <p class="ab-p-body">目先の成果ではなく、10年後・20年後に機能する社会インフラを設計することを目指す。</p>
+      </div>
+      <div class="ab-principle">
+        <div class="ab-p-num">VI</div>
+        <div class="ab-p-en">No Inequality</div>
+        <div class="ab-p-title">選択格差をなくす</div>
+        <p class="ab-p-body">生まれた場所・環境・経済状況によって人生の選択肢が制限される社会を、設計の力で変える。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. 会社名の由来 -->
+<section style="background:var(--black);">
+  <div class="container" style="padding-top:120px;padding-bottom:120px;">
+    <div class="ab-name-layout">
+      <div class="ab-name-icon fi">
+        <div class="ab-name-circle">
+          <span>F</span>
+        </div>
+      </div>
+      <div>
+        <div class="ab-intro-num fu">06</div>
+        <div class="sec-label fu">Name Origin</div>
+        <h2 class="sec-heading fu">会社名の由来</h2>
+        <div class="sec-divider fu"></div>
+        <div class="ab-name-body fu">
+          <p>
+            「Fenrir（フェンリル）」は、北欧神話に登場する巨大な狼の名前です。神々さえも恐れた存在として描かれるフェンリルは、古い秩序を打ち壊し、新しい時代を切り開く象徴として解釈されてきました。
+          </p>
+          <p>
+            私たちがこの名を選んだのは、日本の社会福祉が直面する「構造的な古さ」を打ち破り、次世代の社会インフラを設計することへの宣言です。
+          </p>
+          <p>
+            既存の制度や慣習に縛られることなく、本質的な変革を追求する——そのような存在でありたいという意志が、「Fenrir」という名前に込められています。「Innovations」は、イノベーションを起こすのではなく、社会の仕組みそのものを革新し続けることへの意思表示です。
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 7. 会社概要 -->
+<section style="background:var(--navy);">
+  <div class="container" style="padding-top:120px;padding-bottom:120px;">
+    <div class="ab-intro-num fu">07</div>
+    <div class="sec-label fu">Company Info</div>
+    <h2 class="sec-heading fu">会社概要</h2>
     <div class="info-table fu">
       <div class="info-row">
         <div class="info-key">Company</div>
-        <div class="info-val">フェンリルイノベーションズ株式会社<br><span style="font-family:var(--font-en);font-size:13px;color:var(--gray);">Fenrir Innovations Inc.</span></div>
+        <div class="info-val">フェンリルイノベーションズ株式会社<br><span style="font-family:var(--ff-en);font-size:12px;color:var(--gray);">Fenrir Innovations Inc.</span></div>
       </div>
       <div class="info-row">
         <div class="info-key">Founded</div>
         <div class="info-val">2025年（設立準備中）</div>
       </div>
       <div class="info-row">
-        <div class="info-key">Business</div>
-        <div class="info-val">社会福祉法人ネットワーク統合支援 / 経営改革コンサルティング / 福祉DXプラットフォーム / 政策提言・社会インフラ設計</div>
-      </div>
-      <div class="info-row">
         <div class="info-key">Concept</div>
         <div class="info-val">社会システム設計会社</div>
+      </div>
+      <div class="info-row">
+        <div class="info-key">Business</div>
+        <div class="info-val">社会福祉法人ネットワーク統合支援 / 経営改革コンサルティング / 福祉DXプラットフォーム / 資本連携・M&amp;A支援 / 政策提言・社会インフラ設計</div>
       </div>
       <div class="info-row">
         <div class="info-key">Location</div>
@@ -185,30 +348,44 @@
   </div>
 </section>
 
+<!-- CTA -->
 <section class="s-cta">
   <div class="wrap">
     <div class="cta-en fu">Let's Design Together</div>
     <h2 class="cta-title fu">社会福祉の未来を、<br>一緒に設計しませんか。</h2>
+    <p class="cta-sub fu">フェンリルイノベーションズへのお問い合わせ、ご相談はこちらから。</p>
     <div class="hero-btns fu">
       <a href="contact.html" class="btn btn-gold">お問い合わせ</a>
-      <a href="system-design.html" class="btn btn-line">System Designを見る</a>
+      <a href="system-design.html" class="btn btn-line">System Design を見る</a>
     </div>
   </div>
 </section>
 
 <footer>
-  <div class="foot-inner">
+  <div class="foot-tagline-wrap">
+    <p class="foot-tagline-large">社会は、進化できる。</p>
+  </div>
+  <div class="foot-wrap">
     <div class="foot-brand">
       <a href="index.html" class="logo">FENRIR <span>INNOVATIONS</span></a>
       <p>フェンリルイノベーションズ<br>社会システム設計企業</p>
     </div>
-    <div><div class="foot-ttl">Company</div><ul class="foot-list"><li><a href="about.html">About</a></li><li><a href="system-design.html">System Design</a></li><li><a href="business.html">Business</a></li></ul></div>
-    <div><div class="foot-ttl">Content</div><ul class="foot-list"><li><a href="insight.html">Insight</a></li><li><a href="case.html">Case</a></li><li><a href="recruit.html">Recruit</a></li></ul></div>
-    <div><div class="foot-ttl">Contact</div><ul class="foot-list"><li><a href="contact.html">お問い合わせ</a></li><li><a href="#">プライバシーポリシー</a></li></ul></div>
+    <div class="foot-col">
+      <div class="foot-col-title">Company</div>
+      <ul><li><a href="about.html">About</a></li><li><a href="system-design.html">System Design</a></li><li><a href="business.html">Business</a></li></ul>
+    </div>
+    <div class="foot-col">
+      <div class="foot-col-title">Content</div>
+      <ul><li><a href="insight.html">Insight</a></li><li><a href="case.html">Case</a></li><li><a href="recruit.html">Recruit</a></li></ul>
+    </div>
+    <div class="foot-col">
+      <div class="foot-col-title">Contact</div>
+      <ul><li><a href="contact.html">お問い合わせ</a></li><li><a href="#">プライバシーポリシー</a></li></ul>
+    </div>
   </div>
   <div class="foot-bottom">
-    <span class="foot-copy">© 2026−2026 フェンリルイノベーションズ</span>
-    <span class="foot-copy" style="color:var(--gold);">Break the System. Design the Next.</span>
+    <span>© 2026 フェンリルイノベーションズ</span>
+    <span class="foot-tagline">Break the System. Design the Next.</span>
   </div>
 </footer>
 <script src="script.js"></script>

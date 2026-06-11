@@ -3,40 +3,87 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>System Design | Fenrir Innovations Inc.</title>
+  <title>System Design | Fenrir Innovations</title>
+  <meta name="description" content="フェンリルモデル・福祉ネットワーク構想・社会インフラ構想・エコシステム。フェンリルイノベーションズの社会システム設計思想。">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;700&family=Noto+Sans+JP:wght@300;400;500&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <style>
-    .sd-concept { background: var(--dark-blue); }
-    .sd-concept .wrap { padding-top: 120px; padding-bottom: 120px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
-    .sd-concept p { font-size: 15px; color: var(--silver); line-height: 2.1; margin-bottom: 18px; }
-    .sd-method { background: var(--black); }
-    .sd-method .wrap { padding-top: 120px; padding-bottom: 120px; }
-    .method-steps { display: flex; flex-direction: column; gap: 2px; margin-top: 60px; }
-    .method-step { display: grid; grid-template-columns: 100px 1fr; gap: 48px; align-items: start; padding: 48px 48px; background: rgba(15,42,68,0.18); border-left: 2px solid transparent; transition: 0.3s; }
-    .method-step:hover { border-left-color: var(--gold); background: rgba(15,42,68,0.35); }
-    .step-num { font-family: var(--font-en); font-size: 48px; font-weight: 300; color: rgba(201,162,74,0.25); line-height: 1; }
-    .step-label { font-family: var(--font-en); font-size: 9px; letter-spacing: 0.35em; color: var(--gold); text-transform: uppercase; margin-bottom: 12px; }
-    .step-title { font-size: 22px; margin-bottom: 14px; }
-    .step-body { font-size: 14px; color: var(--silver); line-height: 2; }
-    .sd-model { background: var(--dark-blue); }
-    .sd-model .wrap { padding-top: 120px; padding-bottom: 120px; }
-    .model-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; margin-top: 60px; }
-    .model-card { padding: 48px 32px; background: rgba(11,11,13,0.45); border-top: 1px solid rgba(201,162,74,0.2); }
-    .model-icon { font-family: var(--font-en); font-size: 28px; color: rgba(201,162,74,0.2); margin-bottom: 20px; letter-spacing: 0.1em; }
-    .model-title { font-size: 19px; margin-bottom: 14px; }
-    .model-body { font-size: 13px; color: var(--silver); line-height: 1.9; }
-    @media(max-width:1024px){ .sd-concept .wrap{grid-template-columns:1fr;} .model-grid{grid-template-columns:1fr;} }
-    @media(max-width:768px){ .method-step{grid-template-columns:1fr;gap:20px;padding:32px 24px;} }
+    .sd-sec-num { font-family:var(--ff-en); font-size:clamp(80px,12vw,160px); font-weight:300; color:rgba(201,162,74,0.07); line-height:1; letter-spacing:-0.04em; margin-bottom:-20px; }
+    .sd-model-steps { display:grid; grid-template-columns:repeat(5,1fr); border-top:1px solid rgba(201,162,74,0.15); margin-top:52px; }
+    .sd-model-step { padding:40px 24px; border-right:1px solid rgba(255,255,255,0.05); transition:0.3s var(--ease); position:relative; }
+    .sd-model-step:last-child { border-right:none; }
+    .sd-model-step:hover { background:rgba(201,162,74,0.04); }
+    .sd-model-step::before { content:''; position:absolute; top:0; left:0; width:0; height:2px; background:var(--gold); transition:0.4s var(--ease); }
+    .sd-model-step:hover::before { width:100%; }
+    .sd-step-num { font-family:var(--ff-en); font-size:9px; letter-spacing:0.35em; color:var(--gold); margin-bottom:12px; }
+    .sd-step-en { font-family:var(--ff-en); font-size:8px; letter-spacing:0.2em; color:var(--gray); text-transform:uppercase; margin-bottom:16px; }
+    .sd-step-title { font-size:16px; font-family:var(--ff-jp); font-weight:300; margin-bottom:12px; }
+    .sd-step-body { font-size:12px; color:var(--silver); line-height:1.85; }
+    .sd-net-layout { display:grid; grid-template-columns:1fr 1fr; min-height:560px; align-items:stretch; }
+    .sd-net-visual { position:relative; overflow:hidden; min-height:460px; }
+    .sd-net-visual canvas { position:absolute; inset:0; width:100%; height:100%; }
+    .sd-net-text { padding:100px 64px 100px 72px; display:flex; flex-direction:column; justify-content:center; }
+    .sd-net-features { list-style:none; margin-top:32px; display:flex; flex-direction:column; gap:0; }
+    .sd-net-features li { font-size:14px; color:var(--silver); padding:14px 0 14px 20px; border-bottom:1px solid rgba(255,255,255,0.06); position:relative; line-height:1.7; }
+    .sd-net-features li::before { content:''; position:absolute; left:0; top:50%; transform:translateY(-50%); width:6px; height:1px; background:var(--gold); }
+    .sd-infra-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; margin-top:52px; }
+    .sd-infra-card { padding:48px 32px; background:rgba(255,255,255,0.02); border-top:2px solid rgba(201,162,74,0.2); transition:0.3s var(--ease); }
+    .sd-infra-card:hover { background:rgba(201,162,74,0.04); border-top-color:var(--gold); transform:translateY(-4px); }
+    .sd-infra-num { font-family:var(--ff-en); font-size:10px; letter-spacing:0.35em; color:var(--gold); margin-bottom:10px; }
+    .sd-infra-en { font-family:var(--ff-en); font-size:9px; letter-spacing:0.2em; color:var(--gray); text-transform:uppercase; margin-bottom:16px; }
+    .sd-infra-title { font-size:20px; font-family:var(--ff-jp); font-weight:300; margin-bottom:14px; }
+    .sd-infra-body { font-size:13px; color:var(--silver); line-height:1.9; }
+    .sd-eco-layout { display:grid; grid-template-columns:1fr 1.3fr; gap:80px; align-items:center; }
+    .sd-eco-diagram { display:flex; align-items:center; justify-content:center; }
+    .sd-eco-list { list-style:none; margin-top:28px; display:flex; flex-direction:column; gap:0; }
+    .sd-eco-item { display:grid; grid-template-columns:48px 1fr; gap:20px; align-items:start; padding:20px 0; border-bottom:1px solid rgba(255,255,255,0.06); }
+    .sd-eco-item:first-child { border-top:1px solid rgba(255,255,255,0.06); }
+    .sd-eco-item-num { font-family:var(--ff-en); font-size:10px; color:var(--gold); letter-spacing:0.2em; margin-top:2px; }
+    .sd-eco-item-text { font-size:14px; color:var(--silver); line-height:1.7; }
+    .sd-eco-item-en { font-family:var(--ff-en); font-size:9px; letter-spacing:0.18em; color:var(--gray); text-transform:uppercase; margin-bottom:6px; }
+    @media(max-width:1100px) {
+      .sd-model-steps { grid-template-columns:repeat(3,1fr); }
+      .sd-net-layout { grid-template-columns:1fr; }
+      .sd-net-visual { min-height:300px; }
+      .sd-net-text { padding:60px 40px; }
+      .sd-eco-layout { grid-template-columns:1fr; gap:48px; }
+    }
+    @media(max-width:768px) {
+      .sd-model-steps { grid-template-columns:1fr; }
+      .sd-infra-grid { grid-template-columns:1fr; }
+    }
   </style>
 </head>
 <body>
 
 <header id="header">
-  <a href="index.html" class="logo">FENRIR <span>INNOVATIONS</span></a>
-  <nav>
+  <div class="header-top">
+    <a href="index.html" class="logo-new">
+      <div class="logo-icon"><svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" width="42" height="42">
+          <circle cx="22" cy="22" r="20" stroke="rgba(255,255,255,0.85)" stroke-width="1.5"/>
+          <circle cx="22" cy="22" r="13" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+          <path d="M22 9v6M22 29v6M9 22h6M29 22h6" stroke="rgba(255,255,255,0.5)" stroke-width="1.2" stroke-linecap="round"/>
+          <path d="M13.5 13.5l4.2 4.2M26.3 26.3l4.2 4.2M30.5 13.5l-4.2 4.2M17.7 26.3l-4.2 4.2" stroke="rgba(255,255,255,0.3)" stroke-width="0.8" stroke-linecap="round"/>
+          <circle cx="22" cy="22" r="3.5" fill="rgba(255,255,255,0.75)"/>
+        </svg></div>
+      <span class="logo-wordmark">Fenrir <em>Innovations</em></span>
+    </a>
+    <div class="header-center-tag">Social System Design Company</div>
+    <div class="header-actions">
+      <button class="header-search-btn" type="button" aria-label="検索">
+        <svg viewBox="0 0 20 20" fill="none" width="18" height="18"><circle cx="8.5" cy="8.5" r="5.5" stroke="currentColor" stroke-width="1.5"/><path d="M13 13l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <span>検索</span>
+      </button>
+      <a href="contact.html" class="header-cta-btn">
+        <svg viewBox="0 0 20 16" fill="none" width="18" height="16"><rect x="1" y="1" width="18" height="14" rx="1" stroke="currentColor" stroke-width="1.5"/><path d="M1 3l9 7 9-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <span>お問い合わせ</span>
+      </a>
+    </div>
+    <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  </div>
+  <nav class="header-nav">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
     <a href="system-design.html" class="active">System Design</a>
@@ -44,120 +91,184 @@
     <a href="insight.html">Insight</a>
     <a href="case.html">Case</a>
     <a href="recruit.html">Recruit</a>
-    <a href="contact.html" class="nav-cta">Contact</a>
+    <a href="contact.html" class="nav-contact">Contact</a>
   </nav>
-  <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
 </header>
 <div class="mobile-nav" id="mobileNav">
-  <a href="index.html">Home</a><a href="about.html">About</a><a href="system-design.html">System Design</a>
-  <a href="business.html">Business</a><a href="insight.html">Insight</a><a href="case.html">Case</a>
-  <a href="recruit.html">Recruit</a><a href="contact.html">Contact</a>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="system-design.html">System Design</a>
+  <a href="business.html">Business</a>
+  <a href="insight.html">Insight</a>
+  <a href="case.html">Case</a>
+  <a href="recruit.html">Recruit</a>
+  <a href="contact.html">Contact</a>
 </div>
 
 <div class="page-hero">
   <div class="page-hero-inner">
     <div class="page-hero-lbl">System Design</div>
-    <h1 class="page-hero-title">思想が、<br>構造を生む。</h1>
-    <div class="page-hero-en">Our Design Philosophy & Methodology</div>
+    <h1 class="page-hero-title">社会は、<br>設計できる。</h1>
+    <div class="page-hero-en">Social System Design</div>
   </div>
 </div>
 
-<!-- CONCEPT -->
-<section class="sd-concept">
-  <div class="wrap">
-    <div>
-      <div class="s-label fu">Design Philosophy</div>
-      <h2 class="s-title fu">課題を解くのではなく、<br>課題が生まれる構造に介入する。</h2>
-      <div class="s-divider fu"></div>
-    </div>
-    <div class="fu">
-      <p>
-        多くの経営改革は、現象への対処に留まります。
-        離職率が高ければ採用を強化し、赤字なら経費を削減する。
-        しかしそれは、根本的な解決にはなりません。
-      </p>
-      <p>
-        フェンリルイノベーションズは、問題の「上流」に立ちます。
-        なぜその問題が生まれるのか。どのような制度・組織・文化の連鎖が、
-        その現象を生み出しているのか。
-        私たちはその構造を解析し、根本から設計し直します。
-      </p>
-      <p>
-        「システム設計」とは、問題の解決策ではありません。
-        問題が生まれない構造の創造——それが私たちのアプローチです。
-      </p>
-      <div class="diagram-wrap fi" style="height:280px;margin-top:48px;">
-        <div class="diagram">
-          <div class="ring"></div><div class="ring"></div><div class="ring"></div><div class="ring"></div><div class="ring"></div>
-          <div class="ring-text">SYSTEM<br>DESIGN</div>
-        </div>
+<!-- 1. FENRIR MODEL -->
+<section style="background:var(--black);">
+  <div class="container" style="padding-top:120px;padding-bottom:120px;">
+    <div class="sd-sec-num fu">01</div>
+    <div class="sec-label fu">Fenrir Model</div>
+    <h2 class="sec-heading fu">Fenrir Model</h2>
+    <p class="sec-body fu" style="max-width:760px;margin-top:8px;">
+      社会福祉法人を持続可能なエコシステムへと転換する、フェンリルイノベーションズ独自の5段階設計プロセス。表層的な改善ではなく、法人の構造そのものを段階的に再設計します。
+    </p>
+    <div class="sd-model-steps stg">
+      <div class="sd-model-step">
+        <div class="sd-step-num">01</div>
+        <div class="sd-step-en">Analyse</div>
+        <div class="sd-step-title">現状解析</div>
+        <p class="sd-step-body">法人・制度・地域の三層から課題の構造を解析し、介入すべきポイントを特定します。</p>
+      </div>
+      <div class="sd-model-step">
+        <div class="sd-step-num">02</div>
+        <div class="sd-step-en">Design</div>
+        <div class="sd-step-title">制度設計</div>
+        <p class="sd-step-body">組織・業務・ITを統合した、再現可能な経営システムとして一から設計します。</p>
+      </div>
+      <div class="sd-model-step">
+        <div class="sd-step-num">03</div>
+        <div class="sd-step-en">Connect</div>
+        <div class="sd-step-title">組織接続</div>
+        <p class="sd-step-body">複数法人をプラットフォームに接続し、共有インフラの土台を段階的に整えます。</p>
+      </div>
+      <div class="sd-model-step">
+        <div class="sd-step-num">04</div>
+        <div class="sd-step-en">Integrate</div>
+        <div class="sd-step-title">統合実装</div>
+        <p class="sd-step-body">データ・資本・人材を統合したエコシステムとして本格的に機能させます。</p>
+      </div>
+      <div class="sd-model-step">
+        <div class="sd-step-num">05</div>
+        <div class="sd-step-en">Expand</div>
+        <div class="sd-step-title">地域展開</div>
+        <p class="sd-step-body">成功モデルを地域全体に展開し、自律的に成長するインフラとして定着させます。</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- METHODOLOGY -->
-<section class="sd-method">
-  <div class="wrap">
-    <div class="s-label fu">Methodology</div>
-    <h2 class="s-title fu">設計プロセス</h2>
-    <div class="method-steps fu">
-      <div class="method-step">
-        <div class="step-num">01</div>
-        <div>
-          <div class="step-label">Diagnosis</div>
-          <div class="step-title">構造診断</div>
-          <div class="step-body">法人・地域・制度の3層にわたる構造を可視化します。財務・労務・組織・IT・地域関係など多角的な分析を通じて、問題の「根」がどこにあるかを特定します。この段階で「何を変えるか」ではなく「なぜそうなっているか」を徹底的に問います。</div>
-        </div>
+<!-- 2. 福祉ネットワーク構想 -->
+<section style="background:var(--navy);">
+  <div class="sd-net-layout">
+    <div class="sd-net-visual">
+      <canvas id="sdNetCanvas"></canvas>
+    </div>
+    <div class="sd-net-text">
+      <div class="sd-sec-num fu" style="font-size:clamp(60px,8vw,100px);">02</div>
+      <div class="sec-label fu">Network Vision</div>
+      <h2 class="sec-heading fu">福祉ネットワーク構想</h2>
+      <p class="sec-body fu">孤立した社会福祉法人を「ネットワーク」として繋ぎ、共有基盤を構築することで、単独では不可能だった規模の力と機能を実現します。</p>
+      <ul class="sd-net-features fu">
+        <li>複数法人を接続するデジタルプラットフォームの構築</li>
+        <li>人材流通・採用支援の法人間ネットワーク化</li>
+        <li>データ共有による経営効率の最大化</li>
+        <li>共同調達・バックオフィス集約による固定費削減</li>
+        <li>ノウハウ・ベストプラクティスのネットワーク内展開</li>
+        <li>地域福祉エコシステムとしての自律的成長基盤の確立</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 3. 社会インフラ構想 -->
+<section style="background:var(--black);">
+  <div class="container" style="padding-top:120px;padding-bottom:120px;">
+    <div class="sd-sec-num fu">03</div>
+    <div class="sec-label fu">Infrastructure Vision</div>
+    <h2 class="sec-heading fu">社会インフラ構想</h2>
+    <p class="sec-body fu" style="max-width:760px;margin-top:8px;">
+      福祉ネットワークを単なる法人連携に留めず、地域社会全体の「インフラ」として機能させることが最終目標です。制度・組織・データ・資本・人材・地域の六層を統合的に設計します。
+    </p>
+    <div class="sd-infra-grid stg">
+      <div class="sd-infra-card">
+        <div class="sd-infra-num">Layer 01</div>
+        <div class="sd-infra-en">Policy Layer</div>
+        <div class="sd-infra-title">制度レイヤー</div>
+        <p class="sd-infra-body">現行制度の構造的欠陥を特定し、持続可能な制度フレームワークとして再構築。規制の隙間を埋め、法人が本来の使命に集中できる制度環境を整備します。</p>
       </div>
-      <div class="method-step">
-        <div class="step-num">02</div>
-        <div>
-          <div class="step-label">Design</div>
-          <div class="step-title">システム設計</div>
-          <div class="step-body">診断結果をもとに、理念を実装可能な組織・業務・IT設計に落とし込みます。「あるべき姿」を定義し、そこに到達するための移行プランを設計します。重要なのは、設計が現場で機能するよう「運用可能性」を最初から組み込むことです。</div>
-        </div>
+      <div class="sd-infra-card">
+        <div class="sd-infra-num">Layer 02</div>
+        <div class="sd-infra-en">Organization Layer</div>
+        <div class="sd-infra-title">組織レイヤー</div>
+        <p class="sd-infra-body">法人間の経営統合・ネットワーク化を推進し、資源・人材・ノウハウが自由に流通する組織エコシステムを形成。孤立から連携へ変換します。</p>
       </div>
-      <div class="method-step">
-        <div class="step-num">03</div>
-        <div>
-          <div class="step-label">Network</div>
-          <div class="step-title">ネットワーク統合</div>
-          <div class="step-body">設計した仕組みを、法人単体にとどめず、地域の法人間ネットワークへと拡張します。共有できる機能・資源・人材を特定し、法人間の連携プロトコルを設計。孤立した法人を、互いに支え合う有機的なネットワークへと接続します。</div>
-        </div>
+      <div class="sd-infra-card">
+        <div class="sd-infra-num">Layer 03</div>
+        <div class="sd-infra-en">Data Layer</div>
+        <div class="sd-infra-title">データレイヤー</div>
+        <p class="sd-infra-body">経営データ・介護記録・財務情報を統合するデジタルプラットフォームを構築。リアルタイムな意思決定支援とエビデンスに基づく政策提言を実現します。</p>
       </div>
-      <div class="method-step">
-        <div class="step-num">04</div>
-        <div>
-          <div class="step-label">Ecosystem</div>
-          <div class="step-title">エコシステム運営</div>
-          <div class="step-body">構築したネットワークが、支援なしに自律的に発展していくエコシステムへと成熟させます。各法人が互いを補完し、地域のニーズに応じて柔軟に進化する「生態系」の実現が、私たちが目指す最終形です。</div>
-        </div>
+      <div class="sd-infra-card">
+        <div class="sd-infra-num">Layer 04</div>
+        <div class="sd-infra-en">Capital Layer</div>
+        <div class="sd-infra-title">資本レイヤー</div>
+        <p class="sd-infra-body">資本調達・M&amp;A支援・社会的インパクト投資の仕組みを整備。法人が持続的に成長するための資本環境を設計し、財務的な持続可能性を担保します。</p>
+      </div>
+      <div class="sd-infra-card">
+        <div class="sd-infra-num">Layer 05</div>
+        <div class="sd-infra-en">Human Layer</div>
+        <div class="sd-infra-title">人材レイヤー</div>
+        <p class="sd-infra-body">介護人材の採用・育成・定着・流通を統合的にマネジメント。法人を超えたキャリアパス設計と、現場スタッフが誇りを持って働ける環境を構築します。</p>
+      </div>
+      <div class="sd-infra-card">
+        <div class="sd-infra-num">Layer 06</div>
+        <div class="sd-infra-en">Community Layer</div>
+        <div class="sd-infra-title">地域レイヤー</div>
+        <p class="sd-infra-body">行政・医療・企業・住民と連携した地域福祉エコシステムを形成。社会インフラとしての福祉ネットワークを地域全体に定着させ、自律的に機能する基盤を実現します。</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- MODEL -->
-<section class="sd-model">
-  <div class="wrap">
-    <div class="s-label fu">Design Model</div>
-    <h2 class="s-title fu">3つの設計軸</h2>
-    <div class="model-grid stg">
-      <div class="model-card">
-        <div class="model-icon">STR</div>
-        <div class="model-title">構造設計<br><span style="font-family:var(--font-en);font-size:11px;color:var(--gray);letter-spacing:0.2em;">Structure</span></div>
-        <div class="model-body">法人・制度・地域の3層を横断する構造分析。問題の「根」を見つけ出し、どこに介入すれば最大の変化が起きるかを特定します。</div>
+<!-- 4. エコシステム -->
+<section style="background:var(--navy);">
+  <div class="container" style="padding-top:120px;padding-bottom:120px;">
+    <div class="sd-eco-layout">
+      <div class="sd-eco-diagram fi">
+        <div class="diagram-wrap">
+          <div class="diagram" style="width:300px;height:300px;">
+            <div class="ring"></div>
+            <div class="ring"></div>
+            <div class="ring"></div>
+            <div class="ring"></div>
+            <div class="ring"></div>
+            <div class="ring-text">WELFARE<br>ECOSYSTEM</div>
+          </div>
+        </div>
       </div>
-      <div class="model-card">
-        <div class="model-icon">SYS</div>
-        <div class="model-title">システム設計<br><span style="font-family:var(--font-en);font-size:11px;color:var(--gray);letter-spacing:0.2em;">System</span></div>
-        <div class="model-body">理念から実装までを一気通貫で設計。組織・業務・IT・人事制度が連動して機能するよう、統合的なシステムを構築します。</div>
-      </div>
-      <div class="model-card">
-        <div class="model-icon">ECO</div>
-        <div class="model-title">エコ設計<br><span style="font-family:var(--font-en);font-size:11px;color:var(--gray);letter-spacing:0.2em;">Ecosystem</span></div>
-        <div class="model-body">単体法人の改革を超え、法人間ネットワークが自律的に発展するエコシステムを設計。地域全体のケアインフラとして機能させます。</div>
+      <div>
+        <div class="sd-sec-num fu">04</div>
+        <div class="sec-label fu">Ecosystem</div>
+        <h2 class="sec-heading fu">エコシステム</h2>
+        <p class="sec-body fu">フェンリルモデルの最終形態は、各法人・地域・制度が有機的に連携し、自律的に成長し続ける「エコシステム」です。個別の介入を超えた、社会インフラとしての持続的な機能を実現します。</p>
+        <ul class="sd-eco-list fu">
+          <li class="sd-eco-item">
+            <div class="sd-eco-item-num">01</div>
+            <div><div class="sd-eco-item-en">Platform Core</div><div class="sd-eco-item-text">Fenrir Management Module——経営・人材・データを一体管理する統合プラットフォームの中核</div></div>
+          </li>
+          <li class="sd-eco-item">
+            <div class="sd-eco-item-num">02</div>
+            <div><div class="sd-eco-item-en">Efficiency Engine</div><div class="sd-eco-item-text">Management Efficiency——業務自動化とデータドリブンな意思決定で経営効率を継続的に改善</div></div>
+          </li>
+          <li class="sd-eco-item">
+            <div class="sd-eco-item-num">03</div>
+            <div><div class="sd-eco-item-en">Community Network</div><div class="sd-eco-item-text">Community Association——地域・行政・医療・企業が連携する地域福祉コミュニティの形成</div></div>
+          </li>
+          <li class="sd-eco-item">
+            <div class="sd-eco-item-num">04</div>
+            <div><div class="sd-eco-item-en">Capital Flow</div><div class="sd-eco-item-text">Capital Circulation——社会的インパクト投資と資本の好循環でエコシステム全体を資本面から支える</div></div>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
@@ -165,28 +276,41 @@
 
 <section class="s-cta">
   <div class="wrap">
-    <div class="cta-en fu">Start Designing</div>
-    <h2 class="cta-title fu">まず、構造を診断しましょう。</h2>
-    <p class="cta-sub fu">システム設計の第一歩は、現状の構造を正確に把握することから始まります。<br>まずはお気軽にご相談ください。</p>
+    <div class="cta-en fu">Let's Design Together</div>
+    <h2 class="cta-title fu">社会システムの設計を、<br>共に始めましょう。</h2>
+    <p class="cta-sub fu">フェンリルイノベーションズへのご相談はこちらから。</p>
     <div class="hero-btns fu">
-      <a href="contact.html" class="btn btn-gold">ご相談はこちら</a>
-      <a href="business.html" class="btn btn-line">事業内容を見る</a>
+      <a href="contact.html" class="btn btn-gold">お問い合わせ</a>
+      <a href="business.html" class="btn btn-line">Business を見る</a>
     </div>
   </div>
 </section>
 
 <footer>
-  <div class="foot-inner">
-    <div class="foot-brand"><a href="index.html" class="logo">FENRIR <span>INNOVATIONS</span></a><p>フェンリルイノベーションズ<br>社会システム設計企業</p></div>
-    <div><div class="foot-ttl">Company</div><ul class="foot-list"><li><a href="about.html">About</a></li><li><a href="system-design.html">System Design</a></li><li><a href="business.html">Business</a></li></ul></div>
-    <div><div class="foot-ttl">Content</div><ul class="foot-list"><li><a href="insight.html">Insight</a></li><li><a href="case.html">Case</a></li><li><a href="recruit.html">Recruit</a></li></ul></div>
-    <div><div class="foot-ttl">Contact</div><ul class="foot-list"><li><a href="contact.html">お問い合わせ</a></li><li><a href="#">プライバシーポリシー</a></li></ul></div>
+  <div class="foot-tagline-wrap">
+    <p class="foot-tagline-large">社会は、進化できる。</p>
+  </div>
+  <div class="foot-wrap">
+    <div class="foot-brand">
+      <a href="index.html" class="logo">FENRIR <span>INNOVATIONS</span></a>
+      <p>フェンリルイノベーションズ<br>社会システム設計企業</p>
+    </div>
+    <div class="foot-col"><div class="foot-col-title">Company</div><ul><li><a href="about.html">About</a></li><li><a href="system-design.html">System Design</a></li><li><a href="business.html">Business</a></li></ul></div>
+    <div class="foot-col"><div class="foot-col-title">Content</div><ul><li><a href="insight.html">Insight</a></li><li><a href="case.html">Case</a></li><li><a href="recruit.html">Recruit</a></li></ul></div>
+    <div class="foot-col"><div class="foot-col-title">Contact</div><ul><li><a href="contact.html">お問い合わせ</a></li><li><a href="#">プライバシーポリシー</a></li></ul></div>
   </div>
   <div class="foot-bottom">
-    <span class="foot-copy">© 2026−2026 フェンリルイノベーションズ</span>
-    <span class="foot-copy" style="color:var(--gold);">Break the System. Design the Next.</span>
+    <span>© 2026 フェンリルイノベーションズ</span>
+    <span class="foot-tagline">Break the System. Design the Next.</span>
   </div>
 </footer>
 <script src="script.js"></script>
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    if (typeof ParticleNet !== 'undefined') {
+      new ParticleNet('sdNetCanvas', { count:55, maxDist:125, color:'94,158,196', speed:0.28, minR:1, maxR:2.5, lineAlpha:0.35, dotAlpha:0.72 });
+    }
+  });
+</script>
 </body>
 </html>
