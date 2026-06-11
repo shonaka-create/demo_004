@@ -43,12 +43,24 @@
     .sd-eco-item-num { font-family:var(--ff-en); font-size:10px; color:var(--gold); letter-spacing:0.2em; margin-top:2px; }
     .sd-eco-item-text { font-size:14px; color:var(--silver); line-height:1.7; }
     .sd-eco-item-en { font-family:var(--ff-en); font-size:9px; letter-spacing:0.18em; color:var(--gray); text-transform:uppercase; margin-bottom:6px; }
+    /* Philosophy section */
+    .sd-phi-layout { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; }
+    .sd-phi-text p { font-size:14px; color:var(--silver); line-height:2.2; margin-bottom:16px; }
+    .sd-phi-steps { display:flex; flex-direction:column; gap:2px; }
+    .sd-phi-step { display:flex; align-items:stretch; }
+    .sd-phi-step-content { flex:1; padding:32px 40px; background:rgba(94,158,196,0.08); border-left:2px solid rgba(94,158,196,0.4); }
+    .sd-phi-step-content:hover { background:rgba(94,158,196,0.12); }
+    .sd-phi-step-en { font-family:var(--ff-en); font-size:clamp(18px,2.2vw,26px); font-weight:300; color:#6FA3C8; line-height:1.2; margin-bottom:8px; }
+    .sd-phi-step-jp { font-size:12px; color:var(--silver); letter-spacing:0.1em; }
+    .sd-phi-arrow { display:flex; align-items:center; justify-content:center; padding:0 12px; color:rgba(94,158,196,0.4); font-size:18px; }
+
     @media(max-width:1100px) {
       .sd-model-steps { grid-template-columns:repeat(3,1fr); }
       .sd-net-layout { grid-template-columns:1fr; }
       .sd-net-visual { min-height:300px; }
       .sd-net-text { padding:60px 40px; }
       .sd-eco-layout { grid-template-columns:1fr; gap:48px; }
+      .sd-phi-layout { grid-template-columns:1fr; gap:48px; }
     }
     @media(max-width:768px) {
       .sd-model-steps { grid-template-columns:1fr; }
@@ -112,6 +124,47 @@
     <div class="page-hero-en">Social System Design</div>
   </div>
 </div>
+
+<!-- 0. 思想 / Philosophy -->
+<section style="background:var(--navy);">
+  <div class="container" style="padding-top:120px;padding-bottom:120px;">
+    <div class="sd-phi-layout">
+      <div>
+        <div class="sec-label fu">Fenrir System Design Philosophy</div>
+        <h2 class="sec-heading fu" style="font-size:clamp(28px,4vw,52px);">社会は設計できる</h2>
+        <div class="sec-divider fu"></div>
+        <div class="sd-phi-text fu">
+          <p>私たちは信じている。社会の問題の多くは人ではなく<strong style="color:var(--white);">構造</strong>にある。制度、慣習、組織、仕組み——それらは社会を支える一方で、時に人の可能性を制限する。</p>
+          <p>しかし社会構造は自然に生まれたものではない。設計されたものだ。制度は設計され、組織は設計され、仕組みは設計されている。</p>
+          <p><strong style="color:var(--gold);">だからこそ社会は再設計できる。</strong></p>
+          <p>Fenrir Innovations は福祉を起点に社会システムを設計する。人を変えるのではない。仕組みを変える。制度を更新し、組織をつなぎ、社会インフラを再設計する。</p>
+        </div>
+      </div>
+      <div class="sd-phi-steps fu">
+        <div class="sd-phi-step">
+          <div class="sd-phi-step-content">
+            <div class="sd-phi-step-en">Break the System</div>
+            <div class="sd-phi-step-jp">既存の制度・常識・構造を解体する</div>
+          </div>
+        </div>
+        <div class="sd-phi-arrow">↓</div>
+        <div class="sd-phi-step">
+          <div class="sd-phi-step-content">
+            <div class="sd-phi-step-en">Design the Next</div>
+            <div class="sd-phi-step-jp">次の社会システムを設計する</div>
+          </div>
+        </div>
+        <div class="sd-phi-arrow">↓</div>
+        <div class="sd-phi-step">
+          <div class="sd-phi-step-content">
+            <div class="sd-phi-step-en">Build the Infrastructure</div>
+            <div class="sd-phi-step-jp">持続可能な社会インフラを構築する</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- 1. FENRIR MODEL -->
 <section style="background:var(--black);">
