@@ -3,212 +3,197 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Recruit | Fenrir Innovations Inc.</title>
+  <title>RECRUIT ~ フェンリルイノベーションズ</title>
+  <meta name="description" content="Fenrir Innovations の採用情報。社会の構造を変える仲間を求めています。">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;700&family=Noto+Sans+JP:wght@300;400;500&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <style>
-    .rec-why { background: var(--dark-blue); }
-    .rec-why .wrap { padding-top: 120px; padding-bottom: 120px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
-    .why-body p { font-size: 15px; color: var(--silver); line-height: 2.1; margin-bottom: 18px; }
-    .why-points { display: flex; flex-direction: column; gap: 2px; }
-    .why-point { padding: 28px 32px; background: rgba(11,11,13,0.4); border-left: 2px solid transparent; transition: 0.3s; }
-    .why-point:hover { border-left-color: var(--gold); }
-    .why-point-num { font-family: var(--font-en); font-size: 9px; color: var(--gold); letter-spacing: 0.3em; margin-bottom: 8px; }
-    .why-point-title { font-size: 16px; margin-bottom: 6px; }
-    .why-point-desc { font-size: 13px; color: var(--silver); line-height: 1.8; }
-    .positions { background: var(--black); }
-    .positions .wrap { padding-top: 120px; padding-bottom: 120px; }
-    .pos-list { display: flex; flex-direction: column; gap: 2px; margin-top: 52px; }
-    .pos-item { padding: 40px 48px; background: rgba(15,42,68,0.18); border-left: 2px solid transparent; transition: 0.3s; }
-    .pos-item:hover { border-left-color: var(--gold); background: rgba(15,42,68,0.38); }
-    .pos-header { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 12px; margin-bottom: 20px; }
-    .pos-type { font-family: var(--font-en); font-size: 9px; letter-spacing: 0.3em; color: var(--gold); text-transform: uppercase; padding: 6px 14px; border: 1px solid rgba(201,162,74,0.4); }
-    .pos-title { font-size: 22px; margin-bottom: 4px; }
-    .pos-en { font-family: var(--font-en); font-size: 11px; letter-spacing: 0.2em; color: var(--gray); }
-    .pos-body { font-size: 14px; color: var(--silver); line-height: 2; }
-    .pos-detail { margin-top: 24px; display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
-    .pos-detail-item { }
-    .pos-detail-label { font-family: var(--font-en); font-size: 9px; letter-spacing: 0.3em; color: var(--gold); text-transform: uppercase; margin-bottom: 6px; }
-    .pos-detail-val { font-size: 13px; color: var(--silver); }
-    .culture { background: var(--dark-blue); }
-    .culture .wrap { padding-top: 120px; padding-bottom: 120px; }
-    .culture-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; margin-top: 52px; }
-    .culture-card { padding: 40px 28px; background: rgba(11,11,13,0.4); }
-    .culture-icon { font-family: var(--font-en); font-size: 10px; letter-spacing: 0.4em; color: var(--gold); text-transform: uppercase; margin-bottom: 16px; }
-    .culture-title { font-size: 18px; margin-bottom: 12px; }
-    .culture-body { font-size: 13px; color: var(--silver); line-height: 1.9; }
-    @media(max-width:1024px){ .rec-why .wrap{grid-template-columns:1fr;} .culture-grid{grid-template-columns:1fr;} }
-    @media(max-width:768px){ .pos-item{padding:28px 24px;} .pos-detail{grid-template-columns:1fr;} }
-  </style>
 </head>
 <body>
 
-<header id="header">
-  <a href="index.html" class="logo">FENRIR <span>INNOVATIONS</span></a>
-  <nav>
-    <a href="index.html">Home</a><a href="about.html">About</a><a href="system-design.html">System Design</a>
-    <a href="business.html">Business</a><a href="insight.html">Insight</a><a href="case.html">Case</a>
+<header id="header" class="scrolled">
+  <div class="header-top">
+    <a href="index.html" class="logo-new">
+      <div class="logo-icon"><svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" width="42" height="42">
+          <circle cx="22" cy="22" r="20" stroke="rgba(255,255,255,0.85)" stroke-width="1.5"/>
+          <circle cx="22" cy="22" r="13" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+          <path d="M22 9v6M22 29v6M9 22h6M29 22h6" stroke="rgba(255,255,255,0.5)" stroke-width="1.2" stroke-linecap="round"/>
+          <path d="M13.5 13.5l4.2 4.2M26.3 26.3l4.2 4.2M30.5 13.5l-4.2 4.2M17.7 26.3l-4.2 4.2" stroke="rgba(255,255,255,0.3)" stroke-width="0.8" stroke-linecap="round"/>
+          <circle cx="22" cy="22" r="3.5" fill="rgba(255,255,255,0.75)"/>
+        </svg></div>
+      <span class="logo-wordmark">Fenrir <em>Innovations</em></span>
+    </a>
+    <div class="header-center-tag">Social System Design Company</div>
+    <div class="header-actions">
+      <button class="header-search-btn" type="button" aria-label="検索">
+        <svg viewBox="0 0 20 20" fill="none" width="18" height="18">
+          <circle cx="8.5" cy="8.5" r="5.5" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M13 13l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <span>検索</span>
+      </button>
+      <a href="contact.html" class="header-cta-btn">
+        <svg viewBox="0 0 20 16" fill="none" width="18" height="16">
+          <rect x="1" y="1" width="18" height="14" rx="1" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M1 3l9 7 9-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <span>お問い合わせ</span>
+      </a>
+    </div>
+    <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  </div>
+  <nav class="header-nav">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="system-design.html">System Design</a>
+    <a href="business.html">Business</a>
+    <a href="insight.html">Insight</a>
+    <a href="case.html">Case</a>
     <a href="recruit.html" class="active">Recruit</a>
-    <a href="contact.html" class="nav-cta">Contact</a>
+    <a href="contact.html" class="nav-contact">Contact</a>
   </nav>
-  <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
 </header>
 <div class="mobile-nav" id="mobileNav">
-  <a href="index.html">Home</a><a href="about.html">About</a><a href="system-design.html">System Design</a>
-  <a href="business.html">Business</a><a href="insight.html">Insight</a><a href="case.html">Case</a>
-  <a href="recruit.html">Recruit</a><a href="contact.html">Contact</a>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="system-design.html">System Design</a>
+  <a href="business.html">Business</a>
+  <a href="insight.html">Insight</a>
+  <a href="case.html">Case</a>
+  <a href="recruit.html">Recruit</a>
+  <a href="contact.html">Contact</a>
 </div>
 
-<div class="page-hero">
-  <div class="page-hero-inner">
-    <div class="page-hero-lbl">Recruit</div>
-    <h1 class="page-hero-title">社会の構造を、<br>共に変えよう。</h1>
-    <div class="page-hero-en">Join Us & Design the Future</div>
+<div class="lp">
+
+  <!-- BREADCRUMBS -->
+  <div class="crumbs">
+    <div class="crumbs-inner">
+      <a href="index.html">フェンリルイノベーションズ</a>
+      <span class="sep">›</span>
+      <span>RECRUIT</span>
+    </div>
   </div>
+
+  <!-- PAGE TITLE -->
+  <div class="pt">
+    <div class="pt-label fu">Recruit</div>
+    <h1 class="pt-heading fu">採用情報</h1>
+    <p class="pt-lead fu">社会の構造を変える仲間を求めている。</p>
+  </div>
+
+  <!-- INTRO -->
+  <section class="lp-section">
+    <div class="lp-inner lp-inner--narrow">
+      <h2 class="lp-heading fu">社会を設計する側に、<br>立ちませんか。</h2>
+      <div class="lp-body fu">
+        <p>Fenrir Innovations は、福祉を起点に社会の構造を再設計する企業です。私たちが求めているのは、既存の常識に疑問を持ち、社会の仕組みそのものを変えたいと考える人材です。</p>
+        <p>福祉の経験は問いません。社会課題に対する強い関心と、構造的に物事を考える力があれば、共に社会を設計する仲間になれるはずです。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT WE VALUE -->
+  <section class="lp-section lp-section--tint">
+    <div class="lp-inner">
+      <div class="lp-label fu">What We Value</div>
+      <h2 class="lp-heading fu">求める人物像</h2>
+      <div class="value-grid stg">
+        <div class="value-card">
+          <div class="value-num">01</div>
+          <h3 class="value-title">構造的思考</h3>
+          <p class="value-body">表面的な問題ではなく、その背後にある構造を見抜き、根本的な解決策を設計できる人。</p>
+        </div>
+        <div class="value-card">
+          <div class="value-num">02</div>
+          <h3 class="value-title">変革への意志</h3>
+          <p class="value-body">既存の常識や前提に疑問を持ち、より良い社会の仕組みを創り出す意志を持つ人。</p>
+        </div>
+        <div class="value-card">
+          <div class="value-num">03</div>
+          <h3 class="value-title">長期的視座</h3>
+          <p class="value-body">短期的な成果だけでなく、次世代に残る社会インフラを構築する視座を持つ人。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OPEN POSITIONS -->
+  <section class="lp-section">
+    <div class="lp-inner">
+      <div class="lp-label fu">Open Positions</div>
+      <h2 class="lp-heading fu">募集職種</h2>
+      <div class="position-list fu">
+        <div class="position-row">
+          <div class="position-name">経営コンサルタント</div>
+          <div class="position-desc">社会福祉法人の経営支援・事業再生を担当</div>
+          <div class="position-type">正社員</div>
+        </div>
+        <div class="position-row">
+          <div class="position-name">DXプロジェクトマネージャー</div>
+          <div class="position-desc">福祉法人のデジタル変革を推進</div>
+          <div class="position-type">正社員</div>
+        </div>
+        <div class="position-row">
+          <div class="position-name">事業開発</div>
+          <div class="position-desc">新規事業の企画・立案・推進を担当</div>
+          <div class="position-type">正社員</div>
+        </div>
+        <div class="position-row">
+          <div class="position-name">データアナリスト</div>
+          <div class="position-desc">福祉データの分析・活用基盤の構築</div>
+          <div class="position-type">正社員／業務委託</div>
+        </div>
+      </div>
+      <div class="apply-row fu">
+        <a href="contact.html" class="btn btn-gold">応募・問い合わせ</a>
+      </div>
+    </div>
+  </section>
+
 </div>
 
-<!-- WHY JOIN -->
-<section class="rec-why">
-  <div class="wrap">
-    <div class="fu">
-      <div class="s-label">Why Fenrir</div>
-      <h2 class="s-title">フェンリルイノベーションズで<br>働くということ。</h2>
-      <div class="s-divider"></div>
-      <div class="why-body">
-        <p>私たちは「社会を変える」という言葉を、スローガンではなく仕事の定義として使います。日常の業務が、そのまま社会福祉インフラの再設計につながっている。そういう仕事をしたい人のための会社です。</p>
-        <p>福祉の経験は問いません。必要なのは、現状に違和感を持ち、「なぜそうなのか」を問い続け、「こうあるべき」という思想を持って動ける姿勢です。</p>
-      </div>
-    </div>
-    <div class="why-points fu">
-      <div class="why-point">
-        <div class="why-point-num">01</div>
-        <div class="why-point-title">思想が評価される環境</div>
-        <div class="why-point-desc">「なぜ」を問い続けることが、最も価値ある仕事です</div>
-      </div>
-      <div class="why-point">
-        <div class="why-point-num">02</div>
-        <div class="why-point-title">社会規模の課題への直接参与</div>
-        <div class="why-point-desc">あなたの仕事が、地域の福祉インフラを変えます</div>
-      </div>
-      <div class="why-point">
-        <div class="why-point-num">03</div>
-        <div class="why-point-title">設計者としての成長機会</div>
-        <div class="why-point-desc">構造分析・システム設計・実装まで一貫して担当できます</div>
-      </div>
-      <div class="why-point">
-        <div class="why-point-num">04</div>
-        <div class="why-point-title">創業期ならではの裁量</div>
-        <div class="why-point-desc">会社の方向性を共に決める段階から参加できます</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- POSITIONS -->
-<section class="positions">
-  <div class="wrap">
-    <div class="s-label fu">Open Positions</div>
-    <h2 class="s-title fu">募集ポジション</h2>
-    <div class="pos-list">
-      <div class="pos-item fu">
-        <div class="pos-header">
-          <div>
-            <div class="pos-title">システム設計コンサルタント</div>
-            <div class="pos-en">System Design Consultant</div>
-          </div>
-          <div class="pos-type">Full-time</div>
-        </div>
-        <div class="pos-body">社会福祉法人の経営・組織・IT構造を分析し、統合的な改革プランを設計・実装します。コンサルティング・経営企画・組織人事のいずれかの経験がある方を歓迎します。</div>
-        <div class="pos-detail">
-          <div class="pos-detail-item"><div class="pos-detail-label">雇用形態</div><div class="pos-detail-val">正社員</div></div>
-          <div class="pos-detail-item"><div class="pos-detail-label">経験</div><div class="pos-detail-val">3年以上推奨</div></div>
-          <div class="pos-detail-item"><div class="pos-detail-label">勤務地</div><div class="pos-detail-val">東京（リモート可）</div></div>
-        </div>
-      </div>
-      <div class="pos-item fu">
-        <div class="pos-header">
-          <div>
-            <div class="pos-title">DXプロジェクトマネージャー</div>
-            <div class="pos-en">DX Project Manager</div>
-          </div>
-          <div class="pos-type">Full-time</div>
-        </div>
-        <div class="pos-body">福祉現場へのDX導入プロジェクトを推進します。要件定義から実装・定着支援まで一貫して担当。ITプロジェクト管理経験者、または福祉・医療DXへの強い関心がある方。</div>
-        <div class="pos-detail">
-          <div class="pos-detail-item"><div class="pos-detail-label">雇用形態</div><div class="pos-detail-val">正社員</div></div>
-          <div class="pos-detail-item"><div class="pos-detail-label">経験</div><div class="pos-detail-val">2年以上推奨</div></div>
-          <div class="pos-detail-item"><div class="pos-detail-label">勤務地</div><div class="pos-detail-val">東京（リモート可）</div></div>
-        </div>
-      </div>
-      <div class="pos-item fu">
-        <div class="pos-header">
-          <div>
-            <div class="pos-title">政策調査・リサーチアナリスト</div>
-            <div class="pos-en">Policy Research Analyst</div>
-          </div>
-          <div class="pos-type">Part-time</div>
-        </div>
-        <div class="pos-body">社会福祉制度・政策のリサーチと分析を担います。調査結果を提言・レポートとしてまとめ、政策提言活動や事業開発に活かします。社会政策・福祉・法律・行政学のバックグラウンド歓迎。</div>
-        <div class="pos-detail">
-          <div class="pos-detail-item"><div class="pos-detail-label">雇用形態</div><div class="pos-detail-val">業務委託・副業可</div></div>
-          <div class="pos-detail-item"><div class="pos-detail-label">経験</div><div class="pos-detail-val">不問（熱意重視）</div></div>
-          <div class="pos-detail-item"><div class="pos-detail-label">勤務地</div><div class="pos-detail-val">完全リモート</div></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CULTURE -->
-<section class="culture">
-  <div class="wrap">
-    <div class="s-label fu">Culture</div>
-    <h2 class="s-title fu">私たちが大切にすること</h2>
-    <div class="culture-grid stg">
-      <div class="culture-card">
-        <div class="culture-icon">Thought</div>
-        <div class="culture-title">思想を持つ</div>
-        <div class="culture-body">「なぜそうするのか」を常に問い続けます。思想のない行動は浪費であり、行動のない思想は空論。両者を一体として追求します。</div>
-      </div>
-      <div class="culture-card">
-        <div class="culture-icon">Design</div>
-        <div class="culture-title">構造から考える</div>
-        <div class="culture-body">目の前の問題ではなく、問題を生み出している構造に目を向けます。原因の原因を探り、根本から設計する習慣を重視します。</div>
-      </div>
-      <div class="culture-card">
-        <div class="culture-icon">Impact</div>
-        <div class="culture-title">社会への影響にこだわる</div>
-        <div class="culture-body">私たちの仕事の評価軸は、クライアントの満足だけでなく、地域社会への実際のインパクトです。定量・定性両面で成果を追います。</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="s-cta">
-  <div class="wrap">
-    <div class="cta-en fu">Apply Now</div>
-    <h2 class="cta-title fu">まずは、<br>話を聞かせてください。</h2>
-    <p class="cta-sub fu">経歴よりも、あなたの思想と問いを聞かせてください。<br>フォームからお気軽にご連絡ください。</p>
-    <div class="hero-btns fu">
-      <a href="contact.html" class="btn btn-gold">エントリー・お問い合わせ</a>
-    </div>
-  </div>
-</section>
-
+<!-- FOOTER -->
 <footer>
-  <div class="foot-inner">
-    <div class="foot-brand"><a href="index.html" class="logo">FENRIR <span>INNOVATIONS</span></a><p>フェンリルイノベーションズ<br>社会システム設計企業</p></div>
-    <div><div class="foot-ttl">Company</div><ul class="foot-list"><li><a href="about.html">About</a></li><li><a href="system-design.html">System Design</a></li><li><a href="business.html">Business</a></li></ul></div>
-    <div><div class="foot-ttl">Content</div><ul class="foot-list"><li><a href="insight.html">Insight</a></li><li><a href="case.html">Case</a></li><li><a href="recruit.html">Recruit</a></li></ul></div>
-    <div><div class="foot-ttl">Contact</div><ul class="foot-list"><li><a href="contact.html">お問い合わせ</a></li><li><a href="#">プライバシーポリシー</a></li></ul></div>
+  <div class="foot-tagline-wrap">
+    <p class="foot-tagline-large fu">Design the Society.</p>
+  </div>
+  <div class="foot-wrap">
+    <div class="foot-brand">
+      <a href="index.html" class="logo">FENRIR <span>INNOVATIONS</span></a>
+      <p>フェンリルイノベーションズ<br>社会システム設計企業</p>
+    </div>
+    <div class="foot-col">
+      <div class="foot-col-title">Company</div>
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="system-design.html">System Design</a></li>
+        <li><a href="business.html">Business</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <div class="foot-col-title">Content</div>
+      <ul>
+        <li><a href="insight.html">Insight</a></li>
+        <li><a href="case.html">Case</a></li>
+        <li><a href="recruit.html">Recruit</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <div class="foot-col-title">Contact</div>
+      <ul>
+        <li><a href="contact.html">お問い合わせ</a></li>
+        <li><a href="#">プライバシーポリシー</a></li>
+      </ul>
+    </div>
   </div>
   <div class="foot-bottom">
-    <span class="foot-copy">© 2026−2026 フェンリルイノベーションズ</span>
-    <span class="foot-copy" style="color:var(--gold);">Break the System. Design the Next.</span>
+    <span>© 2026−2026 フェンリルイノベーションズ</span>
+    <span class="foot-tagline">Break the System. Design the Next.</span>
   </div>
 </footer>
+
 <script src="script.js"></script>
 </body>
 </html>

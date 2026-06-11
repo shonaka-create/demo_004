@@ -9,3 +9,5 @@ Thumbs.db
 # Dropbox
 .dropbox
 desktop.ini
+
+.vercel

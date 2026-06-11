@@ -3,151 +3,206 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Insight | Fenrir Innovations Inc.</title>
+  <title>INSIGHT ~ フェンリルイノベーションズ</title>
+  <meta name="description" content="社会システム・福祉・DX・資本連携に関する知見と研究。政策提言、産業分析、実践事例など社会変革に関する知見を公開しています。">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;700&family=Noto+Sans+JP:wght@300;400;500&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <style>
-    .insight-page { background: var(--black); }
-    .insight-page .wrap { padding-top: 80px; padding-bottom: 120px; }
-    .categories { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 52px; }
-    .cat-btn { padding: 8px 20px; border: 1px solid rgba(255,255,255,0.15); font-family: var(--font-en); font-size: 9px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--silver); cursor: pointer; transition: 0.3s; }
-    .cat-btn:hover, .cat-btn.active { border-color: var(--gold); color: var(--gold); }
-    .article-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; }
-    .article-card { background: rgba(15,42,68,0.18); overflow: hidden; cursor: pointer; transition: 0.3s; }
-    .article-card:hover { background: rgba(15,42,68,0.45); transform: translateY(-4px); }
-    .a-img { height: 200px; background: linear-gradient(135deg, rgba(201,162,74,0.07), rgba(111,163,200,0.07)); display: flex; align-items: center; justify-content: center; }
-    .a-img-label { font-family: var(--font-en); font-size: 24px; color: rgba(201,162,74,0.18); letter-spacing: 0.15em; }
-    .a-body { padding: 28px; }
-    .a-tag { font-family: var(--font-en); font-size: 9px; letter-spacing: 0.3em; color: var(--gold); text-transform: uppercase; margin-bottom: 10px; }
-    .a-title { font-size: 15px; line-height: 1.7; margin-bottom: 12px; }
-    .a-date { font-family: var(--font-en); font-size: 10px; color: var(--gray); }
-    .article-card.featured { grid-column: 1/3; display: grid; grid-template-columns: 1fr 1fr; }
-    .article-card.featured .a-img { height: auto; min-height: 280px; }
-    .article-card.featured .a-title { font-size: 20px; }
-    @media(max-width:1024px){ .article-grid{grid-template-columns:1fr 1fr;} .article-card.featured{grid-column:1/-1;grid-template-columns:1fr;} .article-card.featured .a-img{min-height:200px;} }
-    @media(max-width:768px){ .article-grid{grid-template-columns:1fr;} .article-card.featured{grid-template-columns:1fr;} }
-  </style>
 </head>
 <body>
 
-<header id="header">
-  <a href="index.html" class="logo">FENRIR <span>INNOVATIONS</span></a>
-  <nav>
-    <a href="index.html">Home</a><a href="about.html">About</a><a href="system-design.html">System Design</a>
+<header id="header" class="scrolled">
+  <div class="header-top">
+    <a href="index.html" class="logo-new">
+      <div class="logo-icon"><svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" width="42" height="42">
+          <circle cx="22" cy="22" r="20" stroke="rgba(255,255,255,0.85)" stroke-width="1.5"/>
+          <circle cx="22" cy="22" r="13" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+          <path d="M22 9v6M22 29v6M9 22h6M29 22h6" stroke="rgba(255,255,255,0.5)" stroke-width="1.2" stroke-linecap="round"/>
+          <path d="M13.5 13.5l4.2 4.2M26.3 26.3l4.2 4.2M30.5 13.5l-4.2 4.2M17.7 26.3l-4.2 4.2" stroke="rgba(255,255,255,0.3)" stroke-width="0.8" stroke-linecap="round"/>
+          <circle cx="22" cy="22" r="3.5" fill="rgba(255,255,255,0.75)"/>
+        </svg></div>
+      <span class="logo-wordmark">Fenrir <em>Innovations</em></span>
+    </a>
+    <div class="header-center-tag">Social System Design Company</div>
+    <div class="header-actions">
+      <button class="header-search-btn" type="button" aria-label="検索">
+        <svg viewBox="0 0 20 20" fill="none" width="18" height="18">
+          <circle cx="8.5" cy="8.5" r="5.5" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M13 13l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <span>検索</span>
+      </button>
+      <a href="contact.html" class="header-cta-btn">
+        <svg viewBox="0 0 20 16" fill="none" width="18" height="16">
+          <rect x="1" y="1" width="18" height="14" rx="1" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M1 3l9 7 9-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <span>お問い合わせ</span>
+      </a>
+    </div>
+    <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  </div>
+  <nav class="header-nav">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="system-design.html">System Design</a>
     <a href="business.html">Business</a>
     <a href="insight.html" class="active">Insight</a>
-    <a href="case.html">Case</a><a href="recruit.html">Recruit</a>
-    <a href="contact.html" class="nav-cta">Contact</a>
+    <a href="case.html">Case</a>
+    <a href="recruit.html">Recruit</a>
+    <a href="contact.html" class="nav-contact">Contact</a>
   </nav>
-  <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
 </header>
 <div class="mobile-nav" id="mobileNav">
-  <a href="index.html">Home</a><a href="about.html">About</a><a href="system-design.html">System Design</a>
-  <a href="business.html">Business</a><a href="insight.html">Insight</a><a href="case.html">Case</a>
-  <a href="recruit.html">Recruit</a><a href="contact.html">Contact</a>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="system-design.html">System Design</a>
+  <a href="business.html">Business</a>
+  <a href="insight.html">Insight</a>
+  <a href="case.html">Case</a>
+  <a href="recruit.html">Recruit</a>
+  <a href="contact.html">Contact</a>
 </div>
 
-<div class="page-hero">
-  <div class="page-hero-inner">
-    <div class="page-hero-lbl">Insight</div>
-    <h1 class="page-hero-title">知見・メディア</h1>
-    <div class="page-hero-en">Insights, Research & Perspectives</div>
+<div class="lp">
+
+  <!-- BREADCRUMBS -->
+  <div class="crumbs">
+    <div class="crumbs-inner">
+      <a href="index.html">フェンリルイノベーションズ</a>
+      <span class="sep">›</span>
+      <span>INSIGHT</span>
+    </div>
   </div>
+
+  <!-- PAGE TITLE -->
+  <div class="pt">
+    <div class="pt-label fu">Insight</div>
+    <h1 class="pt-heading fu">Fenrir Insights</h1>
+    <p class="pt-lead fu">
+      社会システム・福祉・DX・資本連携に関する知見と研究。<br>
+      Fenrir Innovations は、社会インフラの再設計をテーマに、社会福祉、経営、テクノロジー、資本の視点から新しい社会モデルを研究・発信しています。本ページでは、政策提言、産業分析、実践事例など社会変革に関する知見を公開しています。
+    </p>
+  </div>
+
+  <!-- ARCHIVE + SIDEBAR -->
+  <section class="lp-section">
+    <div class="lp-inner">
+      <div class="blog-layout">
+
+        <div class="article-list stg">
+          <a href="#" class="article-row">
+            <div class="article-thumb"><span class="article-thumb-label">Insight</span></div>
+            <div class="article-main">
+              <span class="article-cat">未分類</span>
+              <div class="article-title2">DX</div>
+              <p class="article-excerpt">福祉現場のDX推進に関する考察。デジタル化は単なる効率化ではなく、業務とケアの構造を再設計する取り組みである。</p>
+              <div class="article-date2">2026年3月14日</div>
+            </div>
+          </a>
+          <a href="#" class="article-row">
+            <div class="article-thumb"><span class="article-thumb-label">Insight</span></div>
+            <div class="article-main">
+              <span class="article-cat">未分類</span>
+              <div class="article-title2">Hello world!</div>
+              <p class="article-excerpt">Fenrir Insights を開設しました。社会システム・福祉・DX・資本連携に関する調査・提言を、本メディアから発信していきます。</p>
+              <div class="article-date2">2026年3月10日</div>
+            </div>
+          </a>
+        </div>
+
+        <aside class="sidebar">
+          <div class="sb-block fu">
+            <div class="sb-title">人気記事</div>
+            <div class="sb-body">ランキングを集計中です。</div>
+          </div>
+
+          <div class="sb-block fu">
+            <div class="sb-title">カテゴリー</div>
+            <ul class="sb-list">
+              <li><a href="#">DX事例 <span class="cnt">0</span></a></li>
+              <li><a href="#">人材・組織 <span class="cnt">0</span></a></li>
+              <li><a href="#">制度・政策 <span class="cnt">0</span></a></li>
+              <li><a href="#">導入事例 <span class="cnt">0</span></a></li>
+              <li><a href="#">成功事例 <span class="cnt">0</span></a></li>
+              <li><a href="#">未分類 <span class="cnt">2</span></a></li>
+              <li><a href="#">法人連携 <span class="cnt">0</span></a></li>
+              <li><a href="#">社会課題 <span class="cnt">0</span></a></li>
+              <li><a href="#">福祉DX <span class="cnt">0</span></a></li>
+              <li><a href="#">福祉経営 <span class="cnt">0</span></a></li>
+              <li><a href="#">調査・提言 <span class="cnt">0</span></a></li>
+            </ul>
+          </div>
+
+          <div class="sb-block fu">
+            <div class="sb-title">新着記事</div>
+            <div>
+              <a href="#" class="sb-post">
+                <span class="sb-post-title">DX</span>
+                <span class="sb-post-date">2026年3月14日</span>
+              </a>
+              <a href="#" class="sb-post">
+                <span class="sb-post-title">Hello world!</span>
+                <span class="sb-post-date">2026年3月10日</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="sb-banner fu">
+            <div class="sb-banner-en">Consultation</div>
+            <div class="sb-banner-title">福祉DXのご相談</div>
+            <p class="sb-banner-text">経営・DX・法人連携に関するご相談を受け付けています。まずはお気軽にご連絡ください。</p>
+            <a href="contact.html" class="btn btn-gold">無料相談</a>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
 </div>
 
-<section class="insight-page">
-  <div class="wrap">
-    <div class="categories fu">
-      <div class="cat-btn active">All</div>
-      <div class="cat-btn">System Design</div>
-      <div class="cat-btn">Digital</div>
-      <div class="cat-btn">Policy</div>
-      <div class="cat-btn">Management</div>
-      <div class="cat-btn">Network</div>
-    </div>
-    <div class="article-grid stg">
-      <div class="article-card featured">
-        <div class="a-img"><div class="a-img-label">FEATURED</div></div>
-        <div class="a-body">
-          <div class="a-tag">System Design</div>
-          <div class="a-title">社会福祉法人の「経営統合」は、なぜ今必要なのか——構造的危機から読み解く5つの理由</div>
-          <div class="a-date" style="margin-bottom:16px;">2025.11.01</div>
-          <p style="font-size:14px;color:var(--silver);line-height:1.9;">
-            日本の社会福祉法人は今、深刻な構造的危機に直面しています。
-            少子高齢化・人材不足・財政難——この問題は対処療法では解決しない。
-            経営統合という解法が、なぜ今必要なのかを5つの視点から論じます。
-          </p>
-        </div>
-      </div>
-      <div class="article-card">
-        <div class="a-img"><div class="a-img-label">DX</div></div>
-        <div class="a-body">
-          <div class="a-tag">Digital</div>
-          <div class="a-title">介護DXの本質は「効率化」ではなく「設計の転換」にある</div>
-          <div class="a-date">2025.10.15</div>
-        </div>
-      </div>
-      <div class="article-card">
-        <div class="a-img"><div class="a-img-label">POLICY</div></div>
-        <div class="a-body">
-          <div class="a-tag">Policy</div>
-          <div class="a-title">2042年問題に備えて、社会福祉インフラは今何をすべきか</div>
-          <div class="a-date">2025.09.28</div>
-        </div>
-      </div>
-      <div class="article-card">
-        <div class="a-img"><div class="a-img-label">MGT</div></div>
-        <div class="a-body">
-          <div class="a-tag">Management</div>
-          <div class="a-title">属人化した経営から「システム経営」へ——福祉法人の経営改革論</div>
-          <div class="a-date">2025.09.10</div>
-        </div>
-      </div>
-      <div class="article-card">
-        <div class="a-img"><div class="a-img-label">NET</div></div>
-        <div class="a-body">
-          <div class="a-tag">Network</div>
-          <div class="a-title">法人ネットワークのガバナンス設計——統合の失敗例から学ぶ</div>
-          <div class="a-date">2025.08.22</div>
-        </div>
-      </div>
-      <div class="article-card">
-        <div class="a-img"><div class="a-img-label">SYS</div></div>
-        <div class="a-body">
-          <div class="a-tag">System Design</div>
-          <div class="a-title">「理念」を組織に実装する——形骸化しない理念浸透の方法論</div>
-          <div class="a-date">2025.08.05</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="s-cta">
-  <div class="wrap">
-    <div class="cta-en fu">Subscribe</div>
-    <h2 class="cta-title fu">最新の知見を<br>お届けします。</h2>
-    <p class="cta-sub fu">社会福祉・システム設計に関する最新インサイトをいち早くお届けします。</p>
-    <div class="hero-btns fu">
-      <a href="contact.html" class="btn btn-gold">メルマガ登録・お問い合わせ</a>
-    </div>
-  </div>
-</section>
-
+<!-- FOOTER -->
 <footer>
-  <div class="foot-inner">
-    <div class="foot-brand"><a href="index.html" class="logo">FENRIR <span>INNOVATIONS</span></a><p>フェンリルイノベーションズ<br>社会システム設計企業</p></div>
-    <div><div class="foot-ttl">Company</div><ul class="foot-list"><li><a href="about.html">About</a></li><li><a href="system-design.html">System Design</a></li><li><a href="business.html">Business</a></li></ul></div>
-    <div><div class="foot-ttl">Content</div><ul class="foot-list"><li><a href="insight.html">Insight</a></li><li><a href="case.html">Case</a></li><li><a href="recruit.html">Recruit</a></li></ul></div>
-    <div><div class="foot-ttl">Contact</div><ul class="foot-list"><li><a href="contact.html">お問い合わせ</a></li><li><a href="#">プライバシーポリシー</a></li></ul></div>
+  <div class="foot-tagline-wrap">
+    <p class="foot-tagline-large fu">Design the Society.</p>
+  </div>
+  <div class="foot-wrap">
+    <div class="foot-brand">
+      <a href="index.html" class="logo">FENRIR <span>INNOVATIONS</span></a>
+      <p>フェンリルイノベーションズ<br>社会システム設計企業</p>
+    </div>
+    <div class="foot-col">
+      <div class="foot-col-title">Company</div>
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="system-design.html">System Design</a></li>
+        <li><a href="business.html">Business</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <div class="foot-col-title">Content</div>
+      <ul>
+        <li><a href="insight.html">Insight</a></li>
+        <li><a href="case.html">Case</a></li>
+        <li><a href="recruit.html">Recruit</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <div class="foot-col-title">Contact</div>
+      <ul>
+        <li><a href="contact.html">お問い合わせ</a></li>
+        <li><a href="#">プライバシーポリシー</a></li>
+      </ul>
+    </div>
   </div>
   <div class="foot-bottom">
-    <span class="foot-copy">© 2026−2026 フェンリルイノベーションズ</span>
-    <span class="foot-copy" style="color:var(--gold);">Break the System. Design the Next.</span>
+    <span>© 2026−2026 フェンリルイノベーションズ</span>
+    <span class="foot-tagline">Break the System. Design the Next.</span>
   </div>
 </footer>
+
 <script src="script.js"></script>
 </body>
 </html>
